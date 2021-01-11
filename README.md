@@ -7,4 +7,7 @@ Referentes:
  -zonaprop https://www.zonaprop.com.ar/
  -zillow https://www.zillow.com/
  -realtor https://www.realtor.com/
+ - Toribio Achaval https://toribioachaval.com/
+ - Lepore https://www.lepore.com.ar/
+ 
 
