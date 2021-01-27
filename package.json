@@ -1,0 +1,23 @@
+{
+  "name": "grupo_5_inmobiliaria",
+  "version": "1.0.0",
+  "description": "Tematica del sitio: Un sitio de compra y venta de inmuebles con diferentes tipos de viviendas\r con amplio rango de precios y en distintas zonas.\r Público: Cualquier persona con interes de comprar un inmueble, grupos familiares, clase media/alta.\r Referentes: \r  -Remax https://www.remax.com.ar/\r  -zonaprop https://www.zonaprop.com.ar/\r  -zillow https://www.zillow.com/\r  -realtor https://www.realtor.com/\r  - Toribio Achaval https://toribioachaval.com/\r  - Lepore https://www.lepore.com.ar/",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marasco19/grupo_5_inmobiliaria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marasco19/grupo_5_inmobiliaria/issues"
+  },
+  "homepage": "https://github.com/marasco19/grupo_5_inmobiliaria#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
