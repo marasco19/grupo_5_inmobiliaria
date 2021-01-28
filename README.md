@@ -9,5 +9,5 @@ Referentes:
  -realtor https://www.realtor.com/
  - Toribio Achaval https://toribioachaval.com/
  - Lepore https://www.lepore.com.ar/
- 
+ - Tablero de Trello https://trello.com/b/29JLiVDH/grupo5inmobiliaria
 
