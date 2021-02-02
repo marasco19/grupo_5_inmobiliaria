@@ -11,5 +11,5 @@ app.listen(3000, () => console.log("Servidor corriendo en puerto 3000") );
 
 // enviando una pagina HTML con la ruta de Root. (http://localhost:3000)
 app.get ("/", function(req, res){
-    res.sendFile(path.join(__dirname, './views/home.html'));
+    res.sendFile(path.join(__dirname, './views/index.html'));
 });
