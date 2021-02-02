@@ -9,6 +9,7 @@ Referentes:
  -realtor https://www.realtor.com/
  - Toribio Achaval https://toribioachaval.com/
  - Lepore https://www.lepore.com.ar/
+<<<<<<< HEAD
 
 Colores de Background:
 HEX #000000
@@ -41,4 +42,7 @@ Body: Rubik, Sans-Serif, Normal, 15px,
 
 
  
+=======
+ - Tablero de Trello https://trello.com/b/29JLiVDH/grupo5inmobiliaria
+>>>>>>> 5a4bbb554539ca9a2dc395778537ee8a2560ef27
 

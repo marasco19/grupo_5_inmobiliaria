@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+}
+
+.top-navbar{
+display: flex;
+}
+
+.top-navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 2px;
+    padding: 15px;
+    }
+
+.main-navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+    border: solid black 1px;
+    margin: auto;
+    padding: 20px;
+    max-width: 80%;
+}
+.main-navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-between;
+
+    }
+
+.form-buscar form{
+    display: flex; 
+    margin: 5px;
+}    
+
+.destacadas{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.foto-destacadas{
+    width: 45%;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+}
