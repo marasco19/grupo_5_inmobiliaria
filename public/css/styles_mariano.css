@@ -263,8 +263,24 @@ header {
   margin: 0;
   outline: none;
 }
-
+.forgot_container {
+  background-color: #fff;
+  padding: 30px;
+  overflow: hidden;
+  position: fixed;
+  max-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 9003;
+  transition: max-height ease-in-out 0.3s;
+  border-radius: 5px;
+  box-shadow: 0 1px 7px rgb(0 0 0 / 30%);
+}
 .log_container {
+  display: none;
   background-color: #fff;
   padding: 30px;
   overflow: hidden;
