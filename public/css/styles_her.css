@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
@@ -45,6 +46,8 @@ html, body {
     font-weight: bold;
     text-align: left;
     font-size: 18px;
+    color: white;
+    text-decoration: none;
     flex: 1;
 }
 
@@ -59,6 +62,22 @@ html, body {
     font-size: 12px;
     color: mintcream;
     }
+
+    .hamburguer-button{
+      background-color: #0044AA;
+      color: #ffffff;
+      display: block;
+      max-width: 50px;
+      padding: 15px 0;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 18px;
+      margin: auto;
+      position: fixed;
+      top: 150px;
+      right: 50%;
+
+  }
 
 
 .form-buscar form{
@@ -97,16 +116,18 @@ html, body {
     }
 
  
-
 .destacadas{
     display: flex;
     flex-wrap: wrap;
 }
-.foto-destacadas{
-    width: 45%;
+.foto-destacadas img{
+    width: 90%;
     padding: 10px;
     display: flex;
-    
+}
+a.foto-destacadas{
+  width: 45%;
+  display: flex;
 }
 
 .footer{
@@ -123,20 +144,6 @@ html, body {
 
 }
 
-/* .footer nav {
-    display: flex;
-
-        
-}
-.footer ul {
-    display: flex;
-    list-style-type: none;
-        
-}
-.footer li {
-    margin: 0 5px;
-        
-} */
 
 /*inicio footer*/
 
@@ -173,7 +180,7 @@ html, body {
   li {
     list-style: none;
   }
-  a {
+  .footer_container a {
     text-decoration: none;
     color: black;
     text-align: right;
