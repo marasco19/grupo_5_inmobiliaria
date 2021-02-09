@@ -22,6 +22,10 @@ app.get('/login', (req,res) => {
     res.sendFile(path.resolve('./views/login.html'));
 });
 
+app.get('/forgot', (req,res) => {
+    res.sendFile(path.resolve('./views/forgot.html'));
+});
+
 app.get('/home', (req,res) => {
     res.sendFile(path.resolve('./views/home2.html'));
 });
