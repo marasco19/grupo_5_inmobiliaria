@@ -765,11 +765,6 @@ section .propiedad_detail {
 .remember-forgot {
   margin: 10px;
 }
-.remember-forgot input,
-span,
-a {
-  margin: auto;
-}
 
 .login_form input {
   display: block;
