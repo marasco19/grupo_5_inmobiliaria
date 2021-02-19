@@ -664,7 +664,7 @@ section .propiedad_detail {
 }
 
 @media (min-width: 1200px) {
-  .content-nav {
+  /* .content-nav {
     display: none;
-  }
+  } */
 }
