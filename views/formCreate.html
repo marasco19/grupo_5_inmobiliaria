@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a Anchorena Propiedades</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/565ee1d35a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles_mariano2.css">
+</head>
+<body>
+    <div id="container-main">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="/images/logo2.png"" alt="">
+                </div>    
+                <div class="mobile-nav">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="content-nav">
+                    <nav>
+                        <a href="#" class="">Buscar</a>
+                        <a href="#" class="">La Empresa</a>
+                        <a href="#" class="">Tasaciones</a>
+                        <a href="#" class="">Sucursales</a>
+                        <a href="#" class="">Contacto</a>
+                        <a href="/login" class="">Ingresar</a>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <!-- APPLICATION -->
+                <div id="App" class="row pt-5">
+        
+                    <!-- FORM -->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Agregar una propiedad</h4>
+                            </div>
+                            <form id="product-form" class="card-body">
+                                <div class="form-group">
+                                    <label>Tipo de operación:</label>
+                                    <select type="select" id="tipoperacion"  class="form-control">
+                                        <option value="alquiler">Alquiler</option>
+                                        <option value="venta" selected>Venta</option>
+                                    </select>    
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo de propiedad:</label>
+                                    <select type="select" id="tipopropiedad"  class="form-control">
+                                        <option value="departamento">Departamento</option>
+                                        <option value="casa">Casa</option>
+                                        <option value="oficina">Oficina</option>
+                                        <option value="terreno">Terreno</option>
+                                        <option value="local" selected>Local</option>
+                                    </select>    
+                                </div>
+                                <div class="form-group">
+                                    <label>Dirección:</label>
+                                    <input type="text" id="direccion" placeholder="Belgrano 212" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripcion general:</label>
+                                    <textarea id="decripciongral" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Superficie total:</label>
+                                    <input type="number" id="suptotal" placeholder="212" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Superficie cubierta:</label>
+                                    <input type="number" id="supcubierta"  class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label>Superficie descubierta:</label>
+                                    <input type="number" id="supdescubierta"  class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripcion del inmueble:</label>
+                                <div>    
+                                <div class="form-group">    
+                                        <input type="checkbox" id="palier" name="palier" value="si">
+                                        <label for="palier">Palier compartido</label><br>
+                                        <input type="checkbox" id="recepcion" name="recepcion" value="si">
+                                        <label for="recepcion">Recepción</label><br>
+                                        <label for="ambientes">Ambientes:</label><br>
+                                        <input type="number" id="ambientes" class="form-control">
+                                        <label for="dormitorios">Cantidad de dormitorios:</label><br>
+                                        <input type="number" id="dormitorios" class="form-control">
+                                        <label for="banios">Cantidad de baños:</label><br>
+                                        <input type="number" id="banios" class="form-control">
+                                        <label for="medcocina">Medida de la cocina:</label><br>
+                                        <input type="text" id="medcocina" class="form-control">
+                                        <label for="tipococina">Tipo de cocina:</label><br>
+                                        <input type="number" id="tipococina" class="form-control">
+                                        <label for="lavadero">Lavadero:</label><br>
+                                        <input type="text" id="lavadero" class="form-control">
+                                        <label for="balcon">Balcón medidas:</label><br>
+                                        <input type="text" id="balcon" class="form-control">
+                                        <label for="baulera">Baulera:</label><br>
+                                        <input type="number" id="baulera" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="dormitorios">Descripción complementaria:</label><br>
+                                </div>    
+                                <div class="form-group">    
+                                    <label for="expensas">Expensas:</label><br>     
+                                    <input type="number" id="expensas" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="expensas">Expensas:</label><br>     
+                                    <input type="number" id="expensas" class="form-control">
+                                </div> 
+                                <div class="form-group">    
+                                    <label for="abl">ABL:</label><br>     
+                                    <input type="number" id="abl" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="tipopiso">Tipo de piso:</label><br>     
+                                    <input type="number" id="tipopiso" class="form-control">
+                                </div> 
+                                <div class="form-group">    
+                                    <label for="calefaccion">Calefacción:</label><br>     
+                                    <input type="number" id="calefaccion" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="aireacon">Aire acondicionado:</label><br>     
+                                    <input type="number" id="aireacon" class="form-control">
+                                </div> 
+                                <div class="form-group">    
+                                    <label for="aguacaliente">Agua caliente:</label><br>     
+                                    <input type="number" id="aguacaliente" class="form-control">
+                                </div>     
+                                <div class="form-group">    
+                                    <label for="caracedif">Caracteristiccas del edificicio:</label><br>
+                                </div>    
+                                <div class="form-group">    
+                                    <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
+                                    <input type="number" id="nropisos" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="dptosxpisos">Deptos. por Piso:</label><br>     
+                                    <input type="number" id="ptosxpisos" class="form-control">
+                                </div>
+                                <div class="form-group">    
+                                    <label for="ascensor">Ascensor:</label><br>     
+                                    <input type="number" id="ascensor" class="form-control">
+                                </div>
+                                <div class="form-group">  
+                                    <input type="checkbox" id="gimnasio" name="gimnasio" value="si">  
+                                    <label for="gimnasio">gimnasio:</label><br>       
+                                    <input type="checkbox" id="lavaderocen" name="lavaderocen" value="si">  
+                                    <label for="lavaderocen">Lavadero Central:</label><br>       
+                                    <input type="checkbox" id="sum" name="sum" value="si">  
+                                    <label for="sum">S.U.M.:</label><br>       
+                                    <input type="checkbox" id="solarium" name="solarium" value="si">  
+                                    <label for="solarium">Solarium:</label><br>       
+                                    <input type="checkbox" id="salonfiestas" name="salonfiestas" value="si">  
+                                    <label for="salonfiestas">Salón de Fiestas:</label><br>       
+                                    <input type="checkbox" id="guardabici" name="guardabici" value="si">  
+                                    <label for="guardabici">Guarda Bicicletas:</label><br>       
+                                    <input type="checkbox" id="piscina" name="piscina" value="si">  
+                                    <label for="piscina">Piscina:</label><br>       
+                                    <input type="checkbox" id="quincho" name="quincho" value="si">  
+                                    <label for="quincho">Quincho:</label><br>       
+                                    <input type="checkbox" id="parrilla" name="parrilla" value="si">  
+                                    <label for="parrilla">Parrilla:</label><br>       
+                                    <input type="checkbox" id="seguridad" name="seguridad" value="si">  
+                                    <label for="seguridad">Seguridad 24 hs:</label><br>       
+                                    <input type="checkbox" id="grupoelec" name="grupoelec" value="si">  
+                                    <label for="grupoelec">Grupo Electrógeno:</label><br>       
+                                </div>
+                                <div class="form-group">  
+                                    <label for="fotos">Fotos:</label><br>
+                                    <input type="file" class="form-control-file" id="fotos">
+                                </div>    
+                                <div class="form-group">  
+                                    <label for="planos">Planos:</label><br>
+                                    <input type="file" class="form-control-file" id="planos">
+                                </div>    
+                                <input type="submit" value="Guardar" class="bton bton_login">
+                            </form>
+                        </div>
+                    </div>
+        
+                    <!-- PRODUCTS LIST -->
+                    <div id="product-list" class="col-md-8">
+
+
+                    </div>
+                </div>
+            </div>          
+        </main>
+        <footer>
+            <div class="container">
+                <div class="bottom">
+                    <a href="#" class="logo-footer">
+                        <img src="/images/logo2.png" alt="logo">
+                    </a>
+                    <div class="copy">
+                        <div>
+                          <span>© 2021 Anchorena Propiedades</span> Todos los derechos reservados.
+                        </div>
+                        <div class="links">
+                            <a href="#">La empresa</a>
+                            <a href="#">Servicios</a>
+                            <a href="#">Tasaciones</a>
+                            <a href="#">Sucursales</a>
+                            <a href="#">Contacto</a>
+                            <a href="#">Trabaja con nosotros</a>
+                        </div>
+                     </div>
+                        <div class="socials">
+                            <a href="#" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-facebook-official"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-linkedin-square"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="form.js"></script>   
+</body>
+</html>
