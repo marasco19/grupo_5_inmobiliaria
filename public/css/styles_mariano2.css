@@ -806,22 +806,24 @@ section .propiedad_detail {
 }
 
 /*formulario creaciòn*/
-
-.success,
-.error {
-  color: white;
-  padding: 5px;
-  margin: 5px 0 15px 0;
+.card-header {
+  margin-bottom: 5px;
 }
-
-.success {
-  background: green;
+.card-title {
+  margin-left: 20px;
 }
-
-.error {
-  background: red;
+/*formulario creaciòn*/
+/*listado propiedades*/
+.table {
+  margin-top: 20px;
+  background-color: #fff;
 }
-
+.btn-primary {
+  color: #096722;
+}
+.btn-danger {
+}
+/*listado propiedades*/
 @media (min-width: 361px) {
   .content-nav {
     display: none;

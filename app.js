@@ -34,7 +34,7 @@ app.use('/', indexRouter);
 //     res.sendFile(path.resolve('./views/home2.html'));
 // });
 
-app.get('/form', (req,res) => {
-    res.sendFile(path.resolve('./views/formCreate.html'));
-});
+//app.get('/form', (req,res) => {
+//    res.sendFile(path.resolve('./views/formCreate.html'));
+//});
 

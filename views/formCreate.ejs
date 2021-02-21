@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/565ee1d35a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles_mariano2.css">
+    <script src="https://kit.fontawesome.com/565ee1d35a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="container-main">
@@ -38,14 +38,27 @@
             <div class="container">
                 <!-- APPLICATION -->
                 <div id="App" class="row pt-5">
-        
+                    <div class="card-title">
+                        <h3>Agregar una propiedad</h3>
+                    </div>
                     <!-- FORM -->
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Agregar una propiedad</h4>
-                            </div>
                             <form id="product-form" class="card-body">
+                                <div class="card-header">
+                                    <h5>Información General:</h5>
+                                </div>
+                                <div class="form-group">
+                                    <label>Titulo</label>
+                                    <input type="text" id="titulo" placeholder="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <select type="select" id="estado"  class="form-control">
+                                        <option value="activo">Activo</option>
+                                        <option value="innactivo" selected>Inactivo</option>
+                                    </select>    
+                                </div>
                                 <div class="form-group">
                                     <label>Tipo de operación:</label>
                                     <select type="select" id="tipoperacion"  class="form-control">
@@ -56,24 +69,40 @@
                                 <div class="form-group">
                                     <label>Tipo de propiedad:</label>
                                     <select type="select" id="tipopropiedad"  class="form-control">
-                                        <option value="departamento">Departamento</option>
+                                        <option value="departamento"  selected>Departamento</option>
                                         <option value="casa">Casa</option>
                                         <option value="oficina">Oficina</option>
                                         <option value="terreno">Terreno</option>
-                                        <option value="local" selected>Local</option>
+                                        <option value="local">Local</option>
                                     </select>    
                                 </div>
                                 <div class="form-group">
-                                    <label>Dirección:</label>
-                                    <input type="text" id="direccion" placeholder="Belgrano 212" class="form-control">
+                                    <label>Precio:</label>
+                                    <input type="number" id="precio" placeholder="" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Descripcion general:</label>
+                                    <label>Dirección:</label>
+                                    <input type="text" id="direccion" placeholder="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Barrio:</label>
+                                    <input type="text" id="barrio" placeholder="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Latitud (Google Maps):</label>
+                                    <input type="text" id="latitud" placeholder="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Longitud (Google Maps):</label>
+                                    <input type="text" id="longitud" placeholder="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción general:</label>
                                     <textarea id="decripciongral" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
-                                    <input type="number" id="suptotal" placeholder="212" class="form-control">
+                                    <input type="number" id="suptotal" placeholder="" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie cubierta:</label>
@@ -83,14 +112,10 @@
                                     <label>Superficie descubierta:</label>
                                     <input type="number" id="supdescubierta"  class="form-control">
                                 </div>
-                                <div class="form-group">
-                                    <label>Descripcion del inmueble:</label>
-                                <div>    
-                                <div class="form-group">    
-                                        <input type="checkbox" id="palier" name="palier" value="si">
-                                        <label for="palier">Palier compartido</label><br>
-                                        <input type="checkbox" id="recepcion" name="recepcion" value="si">
-                                        <label for="recepcion">Recepción</label><br>
+                                <div class="card-header">
+                                    <h5>Descripción del inmueble:</h5>
+                                </div>
+                                    <div class="form-group">    
                                         <label for="ambientes">Ambientes:</label><br>
                                         <input type="number" id="ambientes" class="form-control">
                                         <label for="dormitorios">Cantidad de dormitorios:</label><br>
@@ -100,20 +125,26 @@
                                         <label for="medcocina">Medida de la cocina:</label><br>
                                         <input type="text" id="medcocina" class="form-control">
                                         <label for="tipococina">Tipo de cocina:</label><br>
-                                        <input type="number" id="tipococina" class="form-control">
-                                        <label for="lavadero">Lavadero:</label><br>
-                                        <input type="text" id="lavadero" class="form-control">
-                                        <label for="balcon">Balcón medidas:</label><br>
-                                        <input type="text" id="balcon" class="form-control">
+                                        <input type="text" id="tipococina" class="form-control">
+                                        <input type="checkbox" id="lavadero" name="lavadero" value="si">
+                                        <label for="lavadero">Lavadero</label><br>
+                                        <input type="checkbox" id="balcon" name="balcon" value="si">
+                                        <label for="balcon">Balcón:</label><br>
+                                        <input type="checkbox" id="baulera" name="baulera" value="si">
                                         <label for="baulera">Baulera:</label><br>
-                                        <input type="number" id="baulera" class="form-control">
+                                        <input type="checkbox" id="palier" name="palier" value="si">
+                                        <label for="palier">Palier compartido</label><br>
+                                        <input type="checkbox" id="recepcion" name="recepcion" value="si">
+                                        <label for="recepcion">Recepción</label><br>
+                                        <input type="checkbox" id="calefaccion" name="calefaccion" value="si">
+                                        <label for="calefaccion">Calefacción</label><br>     
+                                        <input type="checkbox" id="aire" name="aire" value="si">
+                                        <label for="calefaccion">Aire acondicionado</label><br>     
+                                        <input type="checkbox" id="calefaccion" name="calefaccion" value="si">
+                                        <label for="calefaccion">Calefacción</label><br>     
                                 </div>
-                                <div class="form-group">    
-                                    <label for="dormitorios">Descripción complementaria:</label><br>
-                                </div>    
-                                <div class="form-group">    
-                                    <label for="expensas">Expensas:</label><br>     
-                                    <input type="number" id="expensas" class="form-control">
+                                <div class="card-header">
+                                    <h5>Descripción complementaria:</h5>
                                 </div>
                                 <div class="form-group">    
                                     <label for="expensas">Expensas:</label><br>     
@@ -128,21 +159,6 @@
                                     <input type="number" id="tipopiso" class="form-control">
                                 </div> 
                                 <div class="form-group">    
-                                    <label for="calefaccion">Calefacción:</label><br>     
-                                    <input type="number" id="calefaccion" class="form-control">
-                                </div>
-                                <div class="form-group">    
-                                    <label for="aireacon">Aire acondicionado:</label><br>     
-                                    <input type="number" id="aireacon" class="form-control">
-                                </div> 
-                                <div class="form-group">    
-                                    <label for="aguacaliente">Agua caliente:</label><br>     
-                                    <input type="number" id="aguacaliente" class="form-control">
-                                </div>     
-                                <div class="form-group">    
-                                    <label for="caracedif">Caracteristiccas del edificicio:</label><br>
-                                </div>    
-                                <div class="form-group">    
                                     <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
                                     <input type="number" id="nropisos" class="form-control">
                                 </div>
@@ -154,9 +170,16 @@
                                     <label for="ascensor">Ascensor:</label><br>     
                                     <input type="number" id="ascensor" class="form-control">
                                 </div>
+                                <div class="card-header">
+                                    <h5>Plano:</h5>
+                                </div>
+                                <input type="file" class="form-control-file" id="planos">
+                                <div class="card-header">
+                                    <h5>Amenities:</h5>
+                                </div>
                                 <div class="form-group">  
                                     <input type="checkbox" id="gimnasio" name="gimnasio" value="si">  
-                                    <label for="gimnasio">gimnasio:</label><br>       
+                                    <label for="gimnasio">Gimnasio:</label><br>       
                                     <input type="checkbox" id="lavaderocen" name="lavaderocen" value="si">  
                                     <label for="lavaderocen">Lavadero Central:</label><br>       
                                     <input type="checkbox" id="sum" name="sum" value="si">  
@@ -178,25 +201,27 @@
                                     <input type="checkbox" id="grupoelec" name="grupoelec" value="si">  
                                     <label for="grupoelec">Grupo Electrógeno:</label><br>       
                                 </div>
+                                <div class="card-header">
+                                    <h5>Fotos Galeria</h5>
+                                </div>
                                 <div class="form-group">  
-                                    <label for="fotos">Fotos:</label><br>
-                                    <input type="file" class="form-control-file" id="fotos">
-                                </div>    
-                                <div class="form-group">  
-                                    <label for="planos">Planos:</label><br>
-                                    <input type="file" class="form-control-file" id="planos">
-                                </div>    
+                                    <input type="file" multiple class="form-control-file" id="fotos">
+                                </div> 
+                                <div class="card-header">
+                                    <h5>Videos</h5>
+                                </div>   
+                                <div class="form-group">
+                                    <label>Youtube:</label>
+                                    <input type="text" id="youtube" placeholder="Ingresa un ID de video, Ej: bU1QPtOZQZU" class="form-control">
+                                </div>  
+                                <div class="form-group">
+                                    <label>Vimeo:</label>
+                                    <input type="text" id="vimeo" placeholder="Ingresa un ID de video, Ej: 134173961" class="form-control">
+                                </div> 
                                 <input type="submit" value="Guardar" class="bton bton_login">
                             </form>
                         </div>
                     </div>
-        
-                    <!-- PRODUCTS LIST -->
-                    <div id="product-list" class="col-md-8">
-
-
-                    </div>
-                </div>
             </div>          
         </main>
         <footer>
@@ -236,6 +261,6 @@
             </div>
         </footer>
     </div>
-    <script src="form.js"></script>   
+
 </body>
 </html>
