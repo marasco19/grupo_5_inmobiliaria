@@ -12,26 +12,9 @@
 </head>
 <body>
     <div id="container-main">
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <img src="/images/logo2.png"" alt="">
-                </div>    
-                <div class="mobile-nav">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="content-nav">
-                    <nav>
-                        <a href="#" class="">Buscar</a>
-                        <a href="#" class="">La Empresa</a>
-                        <a href="#" class="">Tasaciones</a>
-                        <a href="#" class="">Sucursales</a>
-                        <a href="#" class="">Contacto</a>
-                        <a href="/login" class="">Ingresar</a>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        
+        <%- include("./partials/header") %> 
+        
         <main>
             <div class="banner">
                 <span class="title-search">Expertos en propiedades</span>
@@ -177,42 +160,9 @@
                 </div>
               </section>
         </main>
-        <footer>
-            <div class="container">
-                <div class="bottom">
-                    <a href="#" class="logo-footer">
-                        <img src="/images/logo2.png" alt="logo">
-                    </a>
-                    <div class="copy">
-                        <div>
-                          <span>© 2021 Anchorena Propiedades</span> Todos los derechos reservados.
-                        </div>
-                        <div class="links">
-                            <a href="#">La empresa</a>
-                            <a href="#">Servicios</a>
-                            <a href="#">Tasaciones</a>
-                            <a href="#">Sucursales</a>
-                            <a href="#">Contacto</a>
-                            <a href="#">Trabaja con nosotros</a>
-                        </div>
-                     </div>
-                        <div class="socials">
-                            <a href="#" target="_blank">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-facebook-official"></i>
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-youtube"></i>
-                            </a>
-                        </div>
-                </div>
-            </div>
-        </footer>
+        
+        <%- include("./partials/footer") %> 
+        
     </div>   
 </body>
 </html>
