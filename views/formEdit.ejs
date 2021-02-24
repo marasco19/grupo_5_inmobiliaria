@@ -1,13 +1,13 @@
 <%- include("./partials/headmariano") %> 
-<body>
     <div id="container-main">
         <%- include("./partials/header") %> 
         <main>
+            
             <div class="container">
                 <!-- APPLICATION -->
                 <div id="App" class="row pt-5">
                     <div class="card-title">
-                        <h3>Agregar una propiedad</h3>
+                        <h3>Editar <%= propiedad.titulo %></h3>
                     </div>
                     <!-- FORM -->
                     <div class="col-md-12">
@@ -18,125 +18,136 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Titulo</label>
-                                    <input type="text" id="titulo" placeholder="" class="form-control">
+                                    <input type="text" id="titulo" placeholder="" class="form-control" value="<%= propiedad.titulo %>">
                                 </div>
                                 <div class="form-group">
                                     <label>Estado</label>
                                     <select type="select" id="estado"  class="form-control">
-                                        <option value="activo">Activo</option>
-                                        <option value="innactivo" selected>Inactivo</option>
+                                        <%
+                                        var options = ["activo", "inactivo"];
+                                        for ( var i = 0; i < options.length; i++ ){
+                                            var selected = ( propiedad.estado == options[i] ) ? "selected" : "";
+                                        %>
+                                        <option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option>
+                                        <% } %>
                                     </select>    
                                 </div>
                                 <div class="form-group">
                                     <label>Tipo de operación:</label>
                                     <select type="select" id="tipoperacion"  class="form-control">
-                                        <option value="alquiler">Alquiler</option>
-                                        <option value="venta" selected>Venta</option>
-                                    </select>    
+                                        <%
+                                        var options = ["alquiler", "venta"];
+                                        for ( var i = 0; i < options.length; i++ ){
+                                            var selected = ( propiedad.tipoperacion == options[i] ) ? "selected" : "";
+                                        %>
+                                        <option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option>
+                                        <% } %>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Tipo de propiedad:</label>
                                     <select type="select" id="tipopropiedad"  class="form-control">
-                                        <option value="departamento"  selected>Departamento</option>
-                                        <option value="casa">Casa</option>
-                                        <option value="oficina">Oficina</option>
-                                        <option value="terreno">Terreno</option>
-                                        <option value="local">Local</option>
-                                    </select>    
+                                         <%
+                                        var options = ["departamento", "casa", "oficina", "terreno", "local"];
+                                        for ( var i = 0; i < options.length; i++ ){
+                                            var selected = ( propiedad.tipopropiedad == options[i] ) ? "selected" : "";
+                                        %>
+                                        <option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option>
+                                        <% } %>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Precio:</label>
-                                    <input type="number" id="precio" placeholder="" class="form-control">
+                                    <input type="number" id="precio" placeholder="" class="form-control" value=<%= propiedad.precio %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Dirección:</label>
-                                    <input type="text" id="direccion" placeholder="" class="form-control">
+                                    <input type="text" id="direccion" placeholder="" class="form-control"  value=<%= propiedad.direccion %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Barrio:</label>
-                                    <input type="text" id="barrio" placeholder="" class="form-control">
+                                    <input type="text" id="barrio" placeholder="" class="form-control"  value=<%= propiedad.barrio %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Latitud (Google Maps):</label>
-                                    <input type="text" id="latitud" placeholder="" class="form-control">
+                                    <input type="text" id="latitud" placeholder="" class="form-control"  value=<%= propiedad.latitud %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Longitud (Google Maps):</label>
-                                    <input type="text" id="longitud" placeholder="" class="form-control">
+                                    <input type="text" id="longitud" placeholder="" class="form-control"  value=<%= propiedad.longitud %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Descripción general:</label>
-                                    <textarea id="decripciongral" class="form-control"></textarea>
+                                    <textarea id="descripciongral" class="form-control"  value=<%= propiedad.descripciongral %>></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
-                                    <input type="number" id="suptotal" placeholder="" class="form-control">
+                                    <input type="number" id="suptotal" placeholder="" class="form-control" value=<%= propiedad.suptotal %>>
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie cubierta:</label>
-                                    <input type="number" id="supcubierta"  class="form-control">
+                                    <input type="number" id="supcubierta"  class="form-control" value=<%= propiedad.supcubierta %>>
                                 </div>
                                 <div class="form-group">    
                                     <label>Superficie descubierta:</label>
-                                    <input type="number" id="supdescubierta"  class="form-control">
+                                    <input type="number" id="supdescubierta"  class="form-control" value=<%= propiedad.supdescubierta %>>
                                 </div>
                                 <div class="card-header">
                                     <h5>Descripción del inmueble:</h5>
                                 </div>
                                     <div class="form-group">    
                                         <label for="ambientes">Ambientes:</label><br>
-                                        <input type="number" id="ambientes" class="form-control">
+                                        <input type="number" id="ambientes" class="form-control" value=<%= propiedad.ambientes %> >
                                         <label for="dormitorios">Cantidad de dormitorios:</label><br>
-                                        <input type="number" id="dormitorios" class="form-control">
+                                        <input type="number" id="dormitorios" class="form-control" value=<%= propiedad.dormitorios %> >
                                         <label for="banios">Cantidad de baños:</label><br>
-                                        <input type="number" id="banios" class="form-control">
+                                        <input type="number" id="banios" class="form-control" value=<%= propiedad.banios %> >
                                         <label for="medcocina">Medida de la cocina:</label><br>
-                                        <input type="text" id="medcocina" class="form-control">
+                                        <input type="text" id="medcocina" class="form-control" value=<%= propiedad.medcocina %> >
                                         <label for="tipococina">Tipo de cocina:</label><br>
-                                        <input type="text" id="tipococina" class="form-control">
-                                        <input type="checkbox" id="lavadero" name="lavadero" value="si">
+                                        <input type="text" id="tipococina" class="form-control" value=<%= propiedad.tipococina %> >
+                                        <input type="checkbox" id="lavadero" name="lavadero" <%= propiedad.lavadero ? "checked" : "" %> >
                                         <label for="lavadero">Lavadero</label><br>
-                                        <input type="checkbox" id="balcon" name="balcon" value="si">
+                                        <input type="checkbox" id="balcon" name="balcon" <%= propiedad.balcon ? "checked" : "" %>>
                                         <label for="balcon">Balcón:</label><br>
-                                        <input type="checkbox" id="baulera" name="baulera" value="si">
+                                        <input type="checkbox" id="baulera" name="baulera" <%= propiedad.baulera ? "checked" : "" %>>
                                         <label for="baulera">Baulera:</label><br>
-                                        <input type="checkbox" id="palier" name="palier" value="si">
+                                        <input type="checkbox" id="palier" name="palier" <%= propiedad.palier ? "checked" : "" %>>
                                         <label for="palier">Palier compartido</label><br>
-                                        <input type="checkbox" id="recepcion" name="recepcion" value="si">
+                                        <input type="checkbox" id="recepcion" name="recepcion" <%= propiedad.recepcion ? "checked" : "" %>>
                                         <label for="recepcion">Recepción</label><br>
-                                        <input type="checkbox" id="calefaccion" name="calefaccion" value="si">
+                                        <input type="checkbox" id="calefaccion" name="calefaccion" <%= propiedad.calefaccion ? "checked" : "" %>>
                                         <label for="calefaccion">Calefacción</label><br>     
-                                        <input type="checkbox" id="aire" name="aire" value="si">
-                                        <label for="calefaccion">Aire acondicionado</label><br>     
-                                        <input type="checkbox" id="calefaccion" name="calefaccion" value="si">
-                                        <label for="calefaccion">Calefacción</label><br>     
+                                        <input type="checkbox" id="aire" name="aire" <%= propiedad.aire ? "checked" : "" %>>
+                                        <label for="aire">Aire acondicionado</label><br>     
+                                            
                                 </div>
                                 <div class="card-header">
                                     <h5>Descripción complementaria:</h5>
                                 </div>
                                 <div class="form-group">    
                                     <label for="expensas">Expensas:</label><br>     
-                                    <input type="number" id="expensas" class="form-control">
+                                    <input type="number" id="expensas" class="form-control" value=<%= propiedad.expensas %> >
                                 </div> 
                                 <div class="form-group">    
                                     <label for="abl">ABL:</label><br>     
-                                    <input type="number" id="abl" class="form-control">
+                                    <input type="number" id="abl" class="form-control" value=<%= propiedad.abl %> >
                                 </div>
                                 <div class="form-group">    
                                     <label for="tipopiso">Tipo de piso:</label><br>     
-                                    <input type="number" id="tipopiso" class="form-control">
+                                    <input type="text" id="tipopiso" class="form-control" value=<%= propiedad.tipopiso %> >
                                 </div> 
                                 <div class="form-group">    
                                     <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
-                                    <input type="number" id="nropisos" class="form-control">
+                                    <input type="number" id="nropisos" class="form-control" value=<%= propiedad.nropisos %> >
                                 </div>
                                 <div class="form-group">    
                                     <label for="dptosxpisos">Deptos. por Piso:</label><br>     
-                                    <input type="number" id="ptosxpisos" class="form-control">
+                                    <input type="number" id="dptosxpisos" class="form-control" value=<%= propiedad.dptosxpisos %> >
                                 </div>
                                 <div class="form-group">    
                                     <label for="ascensor">Ascensor:</label><br>     
-                                    <input type="number" id="ascensor" class="form-control">
+                                    <input type="number" id="ascensor" class="form-control" value=<%= propiedad.ascensor %> >
                                 </div>
                                 <div class="card-header">
                                     <h5>Plano:</h5>
@@ -146,27 +157,27 @@
                                     <h5>Amenities:</h5>
                                 </div>
                                 <div class="form-group">  
-                                    <input type="checkbox" id="gimnasio" name="gimnasio" value="si">  
+                                    <input type="checkbox" id="gimnasio" name="gimnasio" <%= propiedad.gimnasio ? "checked" : "" %>> 
                                     <label for="gimnasio">Gimnasio:</label><br>       
-                                    <input type="checkbox" id="lavaderocen" name="lavaderocen" value="si">  
+                                    <input type="checkbox" id="lavaderocen" name="lavaderocen" <%= propiedad.lavaderocen ? "checked" : "" %>>  
                                     <label for="lavaderocen">Lavadero Central:</label><br>       
-                                    <input type="checkbox" id="sum" name="sum" value="si">  
+                                    <input type="checkbox" id="sum" name="sum" <%= propiedad.sum ? "checked" : "" %>>
                                     <label for="sum">S.U.M.:</label><br>       
-                                    <input type="checkbox" id="solarium" name="solarium" value="si">  
+                                    <input type="checkbox" id="solarium" name="solarium"<%= propiedad.solarium ? "checked" : "" %>>
                                     <label for="solarium">Solarium:</label><br>       
-                                    <input type="checkbox" id="salonfiestas" name="salonfiestas" value="si">  
+                                    <input type="checkbox" id="salonfiestas" name="salonfiestas" <%= propiedad.salonfiestas ? "checked" : "" %>>  
                                     <label for="salonfiestas">Salón de Fiestas:</label><br>       
-                                    <input type="checkbox" id="guardabici" name="guardabici" value="si">  
+                                    <input type="checkbox" id="guardabici" name="guardabici" <%= propiedad.guardabici ? "checked" : "" %>>  
                                     <label for="guardabici">Guarda Bicicletas:</label><br>       
-                                    <input type="checkbox" id="piscina" name="piscina" value="si">  
+                                    <input type="checkbox" id="piscina" name="piscina" <%= propiedad.piscina ? "checked" : "" %>> 
                                     <label for="piscina">Piscina:</label><br>       
-                                    <input type="checkbox" id="quincho" name="quincho" value="si">  
+                                    <input type="checkbox" id="quincho" name="quincho" <%= propiedad.quincho ? "checked" : "" %>>
                                     <label for="quincho">Quincho:</label><br>       
-                                    <input type="checkbox" id="parrilla" name="parrilla" value="si">  
+                                    <input type="checkbox" id="parrilla" name="parrilla" <%= propiedad.parrilla ? "checked" : "" %>> 
                                     <label for="parrilla">Parrilla:</label><br>       
-                                    <input type="checkbox" id="seguridad" name="seguridad" value="si">  
+                                    <input type="checkbox" id="seguridad" name="seguridad" <%= propiedad.seguridad ? "checked" : "" %>> 
                                     <label for="seguridad">Seguridad 24 hs:</label><br>       
-                                    <input type="checkbox" id="grupoelec" name="grupoelec" value="si">  
+                                    <input type="checkbox" id="grupoelec" name="grupoelec" <%= propiedad.grupoelec ? "checked" : "" %>>
                                     <label for="grupoelec">Grupo Electrógeno:</label><br>       
                                 </div>
                                 <div class="card-header">
@@ -180,13 +191,13 @@
                                 </div>   
                                 <div class="form-group">
                                     <label>Youtube:</label>
-                                    <input type="text" id="youtube" placeholder="Ingresa un ID de video, Ej: bU1QPtOZQZU" class="form-control">
+                                    <input type="text" id="youtube" placeholder="Ingresa un ID de video, Ej: bU1QPtOZQZU" class="form-control" value=<%= propiedad.youtube %> >
                                 </div>  
                                 <div class="form-group">
                                     <label>Vimeo:</label>
-                                    <input type="text" id="vimeo" placeholder="Ingresa un ID de video, Ej: 134173961" class="form-control">
+                                    <input type="text" id="vimeo" placeholder="Ingresa un ID de video, Ej: 134173961" class="form-control" value=<%= propiedad.vimeo %> >
                                 </div> 
-                                <input type="submit" value="Guardar" class="bton bton_login">
+                                <input type="submit" value="Editar" class="bton bton_login">
                             </form>
                         </div>
                     </div>

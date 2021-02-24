@@ -13,6 +13,7 @@ router.get('/login', mainController.login);
 
 router.get('/admin/form', adminController.form);
 router.get('/admin/list', adminController.list);
+router.get('/admin/formEdit/:idPropiedad', adminController.formEdit);
 
 
 

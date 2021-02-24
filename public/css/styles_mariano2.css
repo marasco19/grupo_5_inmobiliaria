@@ -206,7 +206,6 @@ span.title-search {
   font-size: 14px;
   font-weight: 700;
   color: white;
-  background: #9c9c9c;
   transition: 0.3s;
   padding: 10px 17px;
   cursor: pointer;
@@ -819,9 +818,10 @@ section .propiedad_detail {
   background-color: #fff;
 }
 .btn-primary {
-  color: #096722;
+  border-color: grey;
 }
 .btn-danger {
+  border-color: grey;
 }
 /*listado propiedades*/
 @media (min-width: 361px) {
