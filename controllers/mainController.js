@@ -10,8 +10,14 @@ const mainController = {
     },
     forgot: function (req, res) {
         res.render("forgot");
+    },
+    carrito: function (req, res) {
+        res.render("carrito");
+    },
+    crearcuenta: function (req, res) {
+        res.render("crearcuenta");
     }
-    
+
 
 }
 
