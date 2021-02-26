@@ -25,3 +25,27 @@ MR: Algún concepto de los ruteos no los tenia claros.
 MJR: Buscar un diseño acorde a la cantidad de datos que posee una propiedad.
 
 #24/02/2021
+Que estuvimos haciendo?
+Terminamos de pulir los ultimos detalles para la entrega
+Que vamos a hacer hoy? 
+Tenemos que analizar como repartirnos las tareas del nuevo sprint
+Que vamos a hacer mañana?
+MR:  A definir
+MJR: A definir
+HM: A definir
+Algún problema?
+MR: Problemas en el uso de ejs con los heads especificamente.
+MJR: Comite el error en crud de hacer un install del ejs eso me rompio el proyecto.
+HM: Problemas en la unificacion de los css
+
+#26/02/2021
+Que estuvimos haciendo?
+Definimos y repartimos las tareas del sprint 4, actualizamos el tablero.
+Que vamos a hacer hoy? 
+Arrancar con las tareas asignadas.
+Que vamos a hacer mañana?
+MR:  A definir
+MJR: A definir
+HM: A definir
+Algún problema?
+Por ahora no.
