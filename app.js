@@ -2,10 +2,11 @@ const path = require('path')
 const express = require('express');
 const app = express();
 let indexRouter = require('./routes/index');
-
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 // informo que la carpeta public va a ser estatica (público)
 publicPath = path.resolve(__dirname, './public')
 app.use( express.static(publicPath));
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 // view engine setup
 app.set('view engine', 'ejs');

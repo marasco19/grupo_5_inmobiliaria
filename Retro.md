@@ -22,5 +22,15 @@ Retro 27/01/2021 Sprint 1
 5 - Dejar de hacer
     Tratar de no entrar en panico cuando algo no sale.
 
-
+#Retro 03/30/2021 Sprint 3
+1 - Comenzar a hacer
+    EMpezar a definir el contenido de las paginas estaticas.
+2 - Hacer más
+    Reforzar conocimientos con videos y tutoriales.
+3 - Continuar haciendo
+    Seguir con reuniones de check points, seguir tomando de ejemplo partes de otras paginas que nos gustan.
+4 - Hacer menos
+    No tenemos comentarios por el momento.
+5 - Dejar de hacer
+    No dejarnos estar si algo no nos sale.
     
