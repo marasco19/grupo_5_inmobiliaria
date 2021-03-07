@@ -35,6 +35,7 @@ router.get('/crearcuenta', mainController.crearcuenta);
 
 
 router.get('/admin/list', adminController.list);
+router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
 
 router.get('/admin/formCreate', adminController.formCreate);
 router.post('/admin', cpUpload, adminController.store);

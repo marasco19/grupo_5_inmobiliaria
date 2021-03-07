@@ -534,6 +534,27 @@ section .propiedad_detail {
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+.boton-editar, .boton-borrar{
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: fixed;
+  right: 10px;
+  width: 80px;
+}
+
+.boton-editar {
+  background-color: #0996b9;
+  bottom: 50px;
+}
+
+.boton-borrar{
+  background-color: #c50808;
+  bottom: 10px;}
+
 /*formulario contacto*/
 .formulario-contacto {
   background-color: white;

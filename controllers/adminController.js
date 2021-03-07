@@ -56,6 +56,13 @@ const adminController = {
     },
     delete:  function(req, res){
         res.send("delete");
+    },
+    detalleAdmin: function(req, res){
+        let idPropiedad = req.params.idPropiedad;
+        let propiedad = propiedades.find((propiedad) => propiedad.id == idPropiedad);
+        
+        res.render("detalleAdmin", {propiedad:propiedad});
+
     }
 }
 
