@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
+
 
 const mainController = require ("../controllers/mainController")
 const adminController = require ("../controllers/adminController")
@@ -20,7 +21,7 @@ var storage = multer.diskStorage({
   })
   
   var upload = multer({ storage: storage })
-  var cpUpload = upload.fields([{ name: 'plano', maxCount: 1 }, { name: 'fotos', maxCount: 8 }])
+  var cpUpload = upload.fields([{ name: 'planos', maxCount: 1 }, { name: 'fotos', maxCount: 8 }])
   
 router.get('/', mainController.index);
 
@@ -39,7 +40,7 @@ router.get('/admin/list', adminController.list);
 router.get('/admin/formCreate', adminController.formCreate);
 router.post('/admin', cpUpload, adminController.store);
 router.get('/admin/formEdit/:idPropiedad', adminController.formEdit);
-router.put('/admin/:idPropiedad', adminController.update);
+router.put('/admin/:idPropiedad', cpUpload, adminController.update);
 router.delete('/admin/:idPropiedad', adminController.delete);
 
 

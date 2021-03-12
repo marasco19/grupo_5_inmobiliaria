@@ -14,7 +14,9 @@
                           </tr>
                         </thead>
                         <tbody>
+                            
                             <% propiedadListado.forEach(function(propiedad) { %>   
+                                
                             <tr>
                                 <th scope="row"><img src="/images/propiedades/<%=propiedad.fotos%>"></th>
                                 <td><%=propiedad.titulo%></td>
@@ -22,8 +24,10 @@
                                 <td class="text-right">
                                     <form method="GET" action="/admin/formEdit/<%=propiedad.id %>">
                                         <button class="btn btn-primary badge-pill">Editar</button>
+                                    </form>    
+                                    <form action="/admin/<%=propiedad.id %>?_method=DELETE" method="POST">
                                         <button class="btn btn-danger badge-pill">Borrar</button>
-                                    </form>
+                                    </form>    
                                 </td>
                             </tr>
                           <% }) %>
