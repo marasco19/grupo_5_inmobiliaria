@@ -36,10 +36,12 @@ router.get('/crearcuenta', mainController.crearcuenta);
 
 
 router.get('/admin/list', adminController.list);
+router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
 
 router.get('/admin/formCreate', adminController.formCreate);
 router.post('/admin', cpUpload, adminController.store);
 router.get('/admin/formEdit/:idPropiedad', adminController.formEdit);
+router.get('/admin/formCreate', adminController.formCreate);
 router.put('/admin/:idPropiedad', cpUpload, adminController.update);
 router.delete('/admin/:idPropiedad', adminController.delete);
 

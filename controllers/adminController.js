@@ -78,6 +78,13 @@ const adminController = {
 		let finalPropiedades = propiedades.filter(propiedad => propiedad.id != id);
 		fs.writeFileSync(propiedadesFilePath, JSON.stringify(finalPropiedades,null,' '));
 		res.redirect('/admin/list');
+    },
+    detalleAdmin: function(req, res){
+        let idPropiedad = req.params.idPropiedad;
+        let propiedad = propiedades.find((propiedad) => propiedad.id == idPropiedad);
+        console.log(propiedad);
+        res.render("detalleAdmin", {propiedad:propiedad});
+
     }
 }
 
