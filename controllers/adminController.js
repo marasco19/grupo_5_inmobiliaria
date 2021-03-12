@@ -5,6 +5,7 @@ const propiedadesFilePath = path.join(__dirname, '../data/propiedadesDataBase.js
 const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
 const adminController = {
     list: function (req, res) {
+        
         res.render("listProperties", propiedadListado = propiedades);
     },
     formCreate:  function(req, res){
