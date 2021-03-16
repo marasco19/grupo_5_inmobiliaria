@@ -26,19 +26,18 @@
 "Empresa": "Remax.Inc"
 },
 
-
- {
-    "id": 3,
-    "Nombres": "María ",
-    "Apellidos": "Guitierrez",
-    "Año de nacimiento": 1992,
-    "Email": "Mguitierrez@hotmail.com",
-    "Direccion": "Moldes 2430",
-    "Ciudad": "Santa Rosa",
-    "Provincia":  "La Pampa" ,
-    "Celular":  "3275-5698",
-    "Empresa": null
- }
+{
+"id": 3,
+"Nombres": "María ",
+"Apellidos": "Guitierrez",
+"Año de nacimiento": 1992,
+"Email": "Mguitierrez@hotmail.com",
+"Direccion": "Moldes 2430",
+"Ciudad": "Santa Rosa",
+"Provincia":  "La Pampa" ,
+"Celular":  "3275-5698",
+"Empresa": null
+}
 
 
 
