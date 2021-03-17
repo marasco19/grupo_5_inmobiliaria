@@ -16,6 +16,9 @@ const mainController = {
     },
     crearcuenta: function (req, res) {
         res.render("crearcuenta");
+    },
+    laempresa: function (req,res)  {
+        res.render("laempresa");
     }
 
 
