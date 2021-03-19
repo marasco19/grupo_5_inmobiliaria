@@ -158,6 +158,10 @@ header .container .content-nav nav > * {
   background: #9c9c9c;
 }
 
+.text-danger {
+  color: #dc3545 !important;
+}
+
 h1,
 span.title-search {
   color: white;
@@ -535,7 +539,8 @@ section .propiedad_detail {
   border-radius: 5px;
 }
 
-.boton-editar, .boton-borrar{
+.boton-editar,
+.boton-borrar {
   border: none;
   font-size: 20px;
   color: white;
@@ -551,9 +556,10 @@ section .propiedad_detail {
   bottom: 50px;
 }
 
-.boton-borrar{
+.boton-borrar {
   background-color: #c50808;
-  bottom: 10px;}
+  bottom: 10px;
+}
 
 /*formulario contacto*/
 .formulario-contacto {
@@ -641,6 +647,10 @@ section .propiedad_detail {
 
 .control-formulario {
   margin-bottom: 15px;
+}
+.control-formulario label {
+  display: block;
+  text-align: left;
 }
 
 .log_container {

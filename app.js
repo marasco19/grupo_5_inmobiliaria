@@ -6,6 +6,7 @@ const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
 let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
 
 const app = express();
 // informo que la carpeta public va a ser estatica (público)
@@ -27,6 +28,7 @@ app.listen(3000, () => console.log("Servidor corriendo en puerto 3000") );
 // enviando una pagina HTML con la ruta de Root. (http://localhost:3000)
 
 app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 
 // app.get('/productDetail', (req,res) => {
