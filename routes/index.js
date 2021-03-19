@@ -34,6 +34,8 @@ router.get('/carrito', mainController.carrito);
 
 router.get('/crearcuenta', mainController.crearcuenta);
 
+router.get('/laempresa', mainController.laempresa);
+
 
 router.get('/admin/list', adminController.list);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
