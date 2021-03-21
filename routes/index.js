@@ -36,6 +36,8 @@ router.get('/crearcuenta', mainController.crearcuenta);
 
 router.get('/laempresa', mainController.laempresa);
 
+router.get('/tasaciones', mainController.tasaciones);
+
 
 router.get('/admin/list', adminController.list);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);

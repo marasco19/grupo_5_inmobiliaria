@@ -19,6 +19,9 @@ const mainController = {
     },
     laempresa: function (req,res)  {
         res.render("laempresa");
+    },
+    tasaciones: function (req, res) {
+        res.render("tasaciones");
     }
 
 
