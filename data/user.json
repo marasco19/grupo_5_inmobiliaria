@@ -1,50 +1,32 @@
 [
-
-{
-"id": 1,
-"Nombres": "Martín Nicolás",
-"Apellidos": "Richiello",
-"Año de nacimiento": 1997,
-"Email": "martinrichiello@hotmail.com",
-"Direccion": "Virrey del Pino 4570, 7⁰A",
-"Ciudad": "Ciudad Autonoma De Buenos Aires",
-"Provincia":  null,
-"Celular":  "5322-2552",
-"Empresa": "Alvarez Propiedades"
-},
-
-{
-"id": 2,
-"Nombres": "Jose ",
-"Apellidos": "Fernandez",
-"Año de nacimiento": 1988,
-"Email": "josefernandezo@hotmail.com",
-"Direccion": "Ciudad de la Paz 3050, 1⁰A",
-"Ciudad": "Ciudad de Cordoba",
-"Provincia":  "Cordoba" ,
-"Celular":  "9832-8457",
-"Empresa": "Remax.Inc"
-},
-
-{
-"id": 3,
-"Nombres": "María ",
-"Apellidos": "Guitierrez",
-"Año de nacimiento": 1992,
-"Email": "Mguitierrez@hotmail.com",
-"Direccion": "Moldes 2430",
-"Ciudad": "Santa Rosa",
-"Provincia":  "La Pampa" ,
-"Celular":  "3275-5698",
-"Empresa": null
-}
-
-
-
-
+ {
+  "id": 7,
+  "nombre": "Mariano Javier",
+  "apellido": "Ramos",
+  "telefono": "1158516060",
+  "email": "marianojramos@yahoo.com.ar",
+  "tipo_usuario": "Usuario",
+  "password": "$2a$10$0LsCMBkTDm7Y8s8AguSwLODdVZt022xvDMQkr45gf22Ugp.F5vpiq",
+  "imagen": "1616151265940_img.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "Mariano Javier",
+  "apellido": "Ramos",
+  "telefono": "1158516060",
+  "email": "marianojramos3@yahoo.com.ar",
+  "tipo_usuario": "Usuario",
+  "password": "$2a$10$VIfXCuIjY4nBIkDyGZbIGeobvrG8LuJ9YhbFUgRRzB5.9GxorPMRy",
+  "imagen": "1616152083930_img.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": "Mariano Javier",
+  "apellido": "Ramos",
+  "telefono": "1158516060",
+  "email": "marianojramos4@yahoo.com.ar",
+  "tipo_usuario": "Usuario",
+  "password": "$2a$10$wl.LtLFHX1nOB2.L3TMht.JImtLD4V99RIHT92yV8kZ.7wXTURJv.",
+  "imagen": "1616152108867_img.jpg"
+ }
 ]
-
-
-
-
-

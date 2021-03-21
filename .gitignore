@@ -1,4 +1,5 @@
 node_modules
 package-lock
 public/images/propiedades/
-data/
+public/images/users/
+data/propiedadesDataBase.json
