@@ -122,6 +122,7 @@ header {
 .derecha{
   width: 50%;
   padding-left: 10px;
+  
 }
 
 .titulo{
@@ -149,6 +150,76 @@ header {
   color: black;
   font-weight: 600;
 }
+
+.formulario-tasacion{
+
+  height: 100%;
+  width:100%;
+  text-align: center;
+}
+
+.espacios-formulario input{
+
+  width: 70%;
+  height: 35px;
+  margin: 10px;
+  border: #696969 solid 1px;
+  text-align: justify;
+  border-radius: 5px;
+  
+}
+
+.espacios-formulario-comentario input{
+
+  width: 70%;
+  height: 100px;
+  margin: 10px;
+  border: #696969 solid 1px;
+  border-radius: 5px;
+}
+
+div .boton-enviar button{
+
+      background-color: #476bbf;
+      margin-top: 20px;
+      height: 40px;
+      width: 80px;
+      border-radius: 5px;
+      border: white 1px solid;
+      font-size: 20px;
+}
+
+.instagram{
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  width: 50%;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.instagram p{
+  margin-left: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+.telefono{
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  width: 50%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.telefono p{
+  margin-left: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+
 
 /*FOOTER*/
 /*footer*/
