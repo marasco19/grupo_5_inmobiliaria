@@ -667,6 +667,10 @@ section .propiedad_detail {
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 1px 7px rgb(0 0 0 / 30%);
+  max-width: 50vh;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .login_form {
@@ -692,6 +696,14 @@ section .propiedad_detail {
   width: 100%;
   font-weight: bold;
 }
+
+/* Error Login */
+.error_login{
+font-size: 15;
+color: red;
+font-weight: bold;
+}
+
 .popup-close {
   color: black;
   cursor: pointer;

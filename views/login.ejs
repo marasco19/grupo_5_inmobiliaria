@@ -21,25 +21,19 @@
                             </button>
                         </div>
                         <div class="popup-content"></div>
-                            <button id="" type="button" class="bton bton_facebook" >
-                                <i class="fab fa-facebook-f"></i>
-                                Iniciar sesión
-                            </button>
-                            <button id="" type="button" class="bton bton_google" >
-                                <i class="fab fa-google"></i>
-                                Iniciar sesión
-                            </button>
-                            <button id="" type="button" class="bton bton_apple" >
-                                <i class="fab fa-apple"></i>
-                                Iniciar sesión
-                            </button><br>
 
-                            <form class="contactar" action="/" method="POST" class="create-form">
+                            <form class="contactar" action="/users/login" method="POST" class="create-form">
                                 <div class="control-formulario">
-                                    <input type="text" name="mail" placeholder="Email *">
+                                    <input type="email" name="email" placeholder="Email *" value="<%=(locals.oldData)? oldData.email:"" %>">
+                                    <% if (locals.errors && errors.email) { %>
+                                     <p4 class="error_login"> <%= errors.email.msg %> </p4>
+                                    <% } %>
                                 </div>    
                                 <div class="control-formulario">
-                                <input type="text" name="tel" placeholder="Teléfono">
+                                <input type="password" name="password" placeholder="password">
+                                <% if (locals.errors && errors.password) { %>
+                                    <p4 class="error_login"> <%= errors.password.msg %> </p4>
+                                   <% } %>
                                 </div>
                                 <div class="remember-forgot">
                                     <label class="checkbox-styled"><input checked="checked" class="remember-me" id="Login_RememberMe" name="Login.RememberMe" type="checkbox" value="true"><span>No cerrar sesión</span><input name="Login.RememberMe" type="hidden" value="false"></label>

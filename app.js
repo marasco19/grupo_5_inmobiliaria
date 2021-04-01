@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 
 
@@ -8,7 +9,15 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
+
 const app = express();
+
+app.use(session({
+    secret: "Secret session",
+    resave: false,
+    saveUninitialized: false
+}));
+
 // informo que la carpeta public va a ser estatica (público)
 publicPath = path.resolve(__dirname, './public')
 app.use( express.static(publicPath));

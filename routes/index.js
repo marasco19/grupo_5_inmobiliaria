@@ -30,6 +30,7 @@ router.get('/productDetail', mainController.productDetail);
 
 router.get('/login', mainController.login);
 
+
 router.get('/carrito', mainController.carrito);
 
 router.get('/crearcuenta', mainController.crearcuenta);

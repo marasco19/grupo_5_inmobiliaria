@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("./partials/heads/headlogin") %>
+<body>
+	
+	<!-- Container -->
+	<div class="container" style="margin-top: 40px;">
+		<div class="row">
+			<div class="col-md-3">
+				<h2 style="color: black;">Hola <%= user.nombre%> <%= user.apellido%> </h2>
+				<img src="/images/users/<%= user.imagen %> " style="margin-top: 40px; border-radius: 30px; max-width: 25rem;" >
+				<br>
+				<br>
+				<div class="alert alert-success" style="color: black;">Usuario: <%= user.email %> </div>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

@@ -30,7 +30,7 @@ const usersController = {
             return res.render('userRegisterForm',{
                 errors: {
                     email: {
-                        msg: 'Este email ya se esta registrado'
+                        msg: 'Este email ya esta registrado'
                     }
                 },
                 oldData: req.body
@@ -40,13 +40,48 @@ const usersController = {
         return res.redirect('/login'); 
     },
     login: (req, res) => {
-        res.send("login");
+        res.render("login");
     },
     loginProcess: (req, res) => {
-        res.send("loginProcess");
+          
+        let userInDB = User.findByField('email', req.body.email);
+        if (!userInDB){
+            return res.render('login',{
+                errors: {
+                    email: {
+                        msg: 'Este email no está registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }else{
+            // Chequear password
+
+            if (!bcryptjs.compareSync(req.body.password, userInDB.password)){
+                return res.render('login',{
+                    errors: {
+                        password: {
+                            msg: 'Password incorrecta'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }else{
+                // res.send("Usuario Logueado");
+                delete userInDB.password;
+                req.session.user = userInDB;
+                return res.redirect("/users/profile");
+                
+            }
+        }
+
+
+
+
+
     },
     profile: (req, res) => {
-        res.send("profile");
+        return res.render("userProfile", {user:req.session.user})
     },
     logout: (req, res) => {
         res.send("logout");
