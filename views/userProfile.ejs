@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
-    <%- include("./partials/heads/headlogin") %>
+<html lang="en">
+
+
+        <%- include("./partials/heads/headlogin") %>
+		<%- include("./partials/header") %> 
 <body>
 	
 	<!-- Container -->
 	<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<div class="col-md-3">
-				<h2 style="color: black;">Hola <%= user.nombre%> <%= user.apellido%> </h2>
+				<h2 style="color: black;">Bienvenido  <%= user.nombre%> <%= user.apellido%> </h2>
 				<img src="/images/users/<%= user.imagen %> " style="margin-top: 40px; border-radius: 30px; max-width: 25rem;" >
 				<br>
 				<br>
@@ -18,4 +21,6 @@
 	
 	
 </body>
+
+<%- include("./partials/footer") %> 
 </html>

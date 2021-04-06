@@ -61,7 +61,7 @@ const usersController = {
                 return res.render('login',{
                     errors: {
                         password: {
-                            msg: 'Password incorrecta'
+                            msg: 'Credenciales invalidas'
                         }
                     },
                     oldData: req.body
@@ -84,7 +84,8 @@ const usersController = {
         return res.render("userProfile", {user:req.session.user})
     },
     logout: (req, res) => {
-        res.send("logout");
+        req.session.destroy();
+        return res.redirect('/');
     }
 }
 
