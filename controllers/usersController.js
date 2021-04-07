@@ -67,9 +67,13 @@ const usersController = {
                     oldData: req.body
                 });
             }else{
-                // res.send("Usuario Logueado");
+                
                 delete userInDB.password;
                 req.session.user = userInDB;
+                if(req.body.Login_RememberMe){
+                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60})
+                }
+                
                 return res.redirect("/users/profile");
                 
             }
@@ -81,9 +85,11 @@ const usersController = {
 
     },
     profile: (req, res) => {
+        console.log(req.cookies.userEmail);
         return res.render("userProfile", {user:req.session.user})
     },
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     }

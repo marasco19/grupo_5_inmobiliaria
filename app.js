@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 const express = require('express');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 const path = require('path');
 
 
@@ -18,7 +19,16 @@ app.use(session({
     saveUninitialized: false
 }));
 
-// informo que la carpeta public va a ser estatica (público)
+// Middleware de aplicación (se debe ejecutar después de crear la session)
+app.use(cookies());
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+app.use(userLoggedMiddleware);
+
+
+
+
+// informo que la carpeta public va a ser estática (público)
 publicPath = path.resolve(__dirname, './public')
 app.use( express.static(publicPath));
 app.use(express.json());
