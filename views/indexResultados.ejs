@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-        <%- include("./partials/heads/headindex") %>
-
+    <%- include("./partials/heads/headindex") %>
 <body>
     <div id="container-main">
-        
         <%- include("./partials/header") %> 
-        
         <main>
             <div class="banner">
                 <span class="title-search">Expertos en propiedades</span>
@@ -63,99 +58,43 @@
                     </div>
                 </div>
                 </form>
-            </div>
-            <section class="destacado">
-                <div class="grid">
-                    <div class="item">
-                        <div class="mask">
-                            <div class="top">
-                                <h3>Residencial</h3>
-                            </div>
-                            <div class="grid col2">
-        
-                                <div>
-                                    <a href="#">Recoleta</a>
-                                    <a href="#">Palermo</a>
-                                    <a href="#">Puerto Madero</a>
-                                    <a href="#">Belgrano</a>
-                                    <a href="#">Caballito</a>
-                                </div>
-                                <div>
-                                    <a href="#">Canning</a>
-                                    <a href="#">Pilar</a>
-                                    <a href="#">San Isidro</a>
-                                    <a href="#">Tigre</a>
-                                    <a href="#">Patagonia</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                     <!-- ITEM 2 -->
-                     <div class="item">
-        
-                        <div class="mask">
-                            <div class="top">
-                                <h3>Emprendimientos</h3>
-                            </div>
-                            <div class="grid col1">
-                                <div>
-                                    <a href="#">CABA</a>
-                                    <a href="#">Zona Norte</a>
-                                    <a href="#">Zona Sur</a>
-                                    <a href="#">Costa Atlántica</a>
-                                    <a href="#">Patagonia</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                     <!-- ITEM 3 -->
-                     <div class="item">
-        
-                        <div class="mask">
-                            <div class="top">
-                                <h3>Comercial</h3>
-                            </div>
-        
-                            <div class="grid col1">
-        
-                                <div>
-                                  <a href="#">Oficinas</a>
-                                  <a href="#">Edificios</a>
-                                  <a href="#">Locales</a>
-                                  <a href="#">Terrenos</a>
-                                  <a href="#">Depósitos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-<!-- Propiedades en oferta -->
-<div class="item">
-        
-    <div class="mask">
-        <div class="top">
-            <h3>Destacados</h3>
-        </div>
-
-        <div class="grid col1">
-
-            <div class="ofertas">
-                 <a href="/productDetail" ><img src="images/departamento.jpg"> </a>
-                 <a href="/productDetail" ><img src="images/departamento.jpg"> </a>
-             </div>
-        </div>
-    </div>
-</div>
-
-
-
+            </div> 
+            <% if(typeof resultados == 'object' && resultados.length > 0){ %>           
+            <section class="head">
+                <div class="container">
+                    <h2 class="text-center"><span><%=resultados.length%> Resultados</span></h2>
                 </div>
-              </section>
+            </section>
+            <section class="search-box1">
+                <div class="container-fluid">
+                    <% resultados.forEach(function(propiedad) { %>
+                    <div class="row">
+                        <div class="col-md-12 listing-block">
+                            <div class="media">
+                                <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                                <img class="d-flex align-self-start" src="/images/propiedades/<%=propiedad.fotos%>?h=350&auto=compress&cs=tinysrgb" alt="imagen propiedad">
+                                <div class="media-body pl-3">
+                                <div class="price">$ <%=propiedad.precio%><small><%=propiedad.barrio%></small></div>
+                                <div class="stats">
+                                <span><i class="fa fa-arrows-alt"></i><%=propiedad.suptotal%></span>
+                                <span><i class="fa fa-bath"></i><%=propiedad.banios%> Baños</span>
+                            </div>
+                            <div class="address"><%=propiedad.direccion%></div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </section>
+                <% } else { %>
+                    <section class="head">
+                        <div class="container">
+                            <h2 class="text-center"><span><%=resultados.length%> Resultados</span></h2>
+                        </div>
+                    </section>
+                <% } %>                 
+            </div>
         </main>
-        
         <%- include("./partials/footer") %> 
-        
     </div>   
 </body>
 </html>

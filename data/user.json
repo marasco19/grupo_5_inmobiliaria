@@ -38,5 +38,15 @@
   "tipo_usuario": "Usuario",
   "password": "$2a$10$4x7b8xSnBENmn.3RwxLO5uUpwHaCCEYoyILgu2tweUt4MiFYSTg3K",
   "imagen": "1616452991560_img.jpg"
+ },
+ {
+  "id": 11,
+  "nombre": "Mariano Javier",
+  "apellido": "Ramos",
+  "telefono": "1158516060",
+  "email": "marianojramos1@yahoo.com.ar",
+  "tipo_usuario": "Agente",
+  "password": "$2a$10$IeniQQnRLyyj266yM29Cu.jbmOzTtTFhjfajm8LWm2qxlB28ZRGO.",
+  "imagen": "1617967834834_img.png"
  }
 ]
