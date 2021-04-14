@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/heads/headindex") %>
+    <%- include("./partials/heads/headDef") %>
 <body>
-    <div id="container-main">
         <%- include("./partials/header") %> 
         <main>
-            <div class="banner">
-                <span class="title-search">Expertos en propiedades</span>
-                <form action="/buscar/propiedad" method="POST">
-                <div class="form-search">
-                    <div class="radio-group">
-                         <div>
-                            <input type="radio" id="departamentos" name="propiedad" value="departamentos" checked="">
-                            <label for="departamentos" class="btn">Departamentos</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="casas" name="propiedad" value="casas">
-                            <label for="casas" class="btn">Casas</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="oficinas" name="propiedad" value="oficinas">
-                            <label for="oficinas" class="btn">Oficinas</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="edificios-block" name="propiedad" value="edificios-en-block">
-                            <label for="edificios-block" class="btn">Edificios</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="locales" name="propiedad" value="locales">
-                            <label for="locales" class="btn">Locales</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="terrenos" name="propiedad" value="terrenos">
-                            <label for="terrenos" class="btn">Terrenos</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="depositos" name="propiedad" value="depositos">
-                            <label for="depositos" class="btn">Depósitos</label>
-                        </div>
+            <section id="hero">
+                <div class="container">
+                    <div class="content-center">
+                        <h1>Expertos en propiedades</h1>
                     </div>
-    
-                    <div class="searchbox">
-                        <div class="radio-group-2">
-                            <div>
-                                <input type="radio" id="comprar" name="comprar_alquilar" checked="" value="venta">
-                                <label for="comprar">Venta</label>
+                    <form action="/buscar/propiedad" method="POST">
+                        <div class="form-search">
+                            <div class="radio-group">
+                                <div>
+                                    <input type="radio" name="propiedad" id="departamentos" value="departamentos">
+                                    <label for="departamentos" class="btn">Departamentos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="emprendimientos" value="emprendimientos">
+                                    <label for="emprendimientos" class="btn">Emprendimientos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="casas" value="casas">
+                                    <label for="casas" class="btn">Casas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="oficinas" value="oficinas">
+                                    <label for="oficinas" class="btn">Oficinas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="locales" value="locales">
+                                    <label for="locales" class="btn">Locales</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="terrenos" value="terrenos">
+                                    <label for="terrenos" class="btn">Terrenos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="depositos" value="depositos">
+                                    <label for="depositos" class="btn">Depositos</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="alquilar" name="comprar_alquilar" value="alquiler">
-                                <label for="alquilar">Alquiler</label>
+                            <div id="searchbox" class="search-content v1">
+                                <div class="radio-group-2">
+                                    <div>
+                                        <input type="radio" id="comprar" name="comprar_alquilar" checked="" value="venta">
+                                        <label for="comprar">VENTA</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="alquilar" name="comprar_alquilar" checked="" value="alquiler">
+                                        <label for="comprar">ALQUILER</label>
+                                    </div>
+                                </div>
+                                <div class="input-search desktop_767 ">
+                                    <input type="text" autocomplete="off" placeholder="Ingresá ubicación, barrio o palabra clave" name="quicksearch" class="quicksearch ui-autocomplete-input">
+                                    <button type="submit"><span class="btn orange search_propiedades"><ion-icon name="search-outline" class="icon-find"></ion-icon> Buscar </span></button>
+                                </div>
                             </div>
                         </div>
-                        <div class="input-search">
-                            <input type="text" autocomplete="off" placeholder="Ingresá ubicación, barrio o palabra clave" name="quicksearch" class="quicksearch ui-autocomplete-input">
-                                <button type="submit" class="btn btn-primary">Buscar</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                </form>
-            </div> 
+            
             <% if(typeof resultados == 'object' && resultados.length > 0){ %>           
             <section class="head">
                 <div class="container">
@@ -88,11 +90,11 @@
                 <% } else { %>
                     <section class="head">
                         <div class="container">
-                            <h2 class="text-center"><span><%=resultados.length%> Resultados</span></h2>
+                            <h2 class="text-center"><span>0 Resultados</span></h2>
                         </div>
                     </section>
-                <% } %>                 
-            </div>
+                <% } %> 
+            </section>                       
         </main>
         <%- include("./partials/footer") %> 
     </div>   

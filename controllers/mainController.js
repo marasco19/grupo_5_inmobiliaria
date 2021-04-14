@@ -38,6 +38,18 @@ const mainController = {
                 results.push(propiedades[i]);
             }
         }
+        
+        res.render("indexResultados", {resultados: results});
+    },
+    buscarCarrousel: function (req, res) {
+        var results = [];
+        for (var i=0 ; i < propiedades.length ; i++)
+        {
+            if (propiedades[i]['tipopropiedad'] && req.params.tipoPropiedad) {
+                results.push(propiedades[i]);
+            }
+        }
+        
         res.render("indexResultados", {resultados: results});
     }
 }

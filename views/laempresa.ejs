@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-    <%- include("./partials/heads/headlaempresa.ejs") %>
+    <%- include("./partials/heads/headDef.ejs") %>
 
 
 <body>
@@ -14,59 +14,180 @@
 
 <!--MAIN-->
         <main>
-            <section class="section-main">
-                <div class="titulo">
-                    <p>¿Que es Anchorena Propiedades?</p>
-                </div>
-                <div class="parrafo-1">
+            <section id="team" class="pb-5">
+                <div class="card">
+                    <h5 class="section-title h1">¿Que es Anchorena Propiedades?</h5>
                     
-                    <p>Desde 1997 Anchorena Propiedades ha ofrecido los mejores servicios inmobiliarios de la Republica Rgentina. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque illo id a quaerat tempore iusto autem, corrupti adipisci obcaecati nisi excepturi eos sequi illum cumque? 
-                        Perspiciatis eveniet voluptatem beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus ipsam cupiditate voluptates fugit, non neque aliquam accusamus nostrum pariatur voluptate ullam, sit quod dolores distinctio maiores saepe debitis quo!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio sed incidunt aliquam blanditiis tenetur nemo, doloremque corrupti itaque ex aspernatur cum quae numquam quidem dolor nesciunt sunt esse perferendis?</p>
-                </div>
-                <div class="parrafo-2">
-                    <p>El equipo de Anchorena Propiedades</p>
-                </div>
-
-                <div class="titulo-2">
-                    <p>¿Quienes somos?</p>
-                </div>
-                <section class="parrafo-3">
-                    
-                    <div class= "perfil">
-                        <img src="images/perfil.jpg" alt="perfil1" height="200px" width="150px">
-                        <p class="nombres">Martín Richiello</p>
-                        <p class="biografia">Estudiante de Digital House y CEO de Anchorena Propiedades. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias porro, earum, maxime tenetur obcaecati dolore velit corrupti ut mollitia excepturi reprehenderit, deserunt delectus quos enim consequuntur deleniti ea dolorum tempore.</p>
-
+                    <div class="card-body">
+                    <p class="card-text">Desde 1997 Anchorena Propiedades Somos una empresa familiar sólida y transparente con una larga trayectoria en el mercado local atendida en forma personalizada por sus dueños.
+                        En esta larga trayectoria hemos consolidado negociaciones favorables para nuestros clientes, basadas en la honestidad, responsabilidad y profesionalismo. Hemos adquirido un vasto conocimiento del mercado rural y urbano que nos ha permitido consolidar exitosas negociaciones para nuestros clientes locales y extranjeros.
+                        Intervenimos en el mercado inmobiliario como asesores en compra-venta, alquileres, valuación y tasación de propiedades y administración de campos. Somos conscientes del compromiso y responsabilidad que implica llegar a la mejor negociación posible para nuestros clientes, sin importar cuales fueren sus propiedades en transacción.</p>
                     </div>
-                    <div class= "perfil">
-                        <img src="images/perfil.jpg" alt="perfil1" height="200px" width="150px">
-                        <p class="nombres">Hernan Minore</p>
-                        <p class="biografia">Estudiante de Digital House y CEO de Anchorena Propiedades</p>
-
+                </div>
+            </section>   
+              <section id="team" class="pb-5">
+                <div class="container">
+                    <h5 class="section-title h1">Nuestro equipo</h5>
+                    <div class="row">
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" >
+                                <div class="mainflip flip-0">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../images/laempresamartin.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Martin Richiello</h4>
+                                                <p class="card-text">Presidente Director de Sucursales</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Presidente Director de Sucursales</h4>
+                                                <p class="card-text">Matrícula CUCICBA N° 394 Máster en Dirección de Empresas (I.A.E.) Arquitecto (U.B.A.)</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../images/laempresahernan.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Hernan Minore</h4>
+                                                <p class="card-text">Vicepresidente
+                                                    Director Comercial</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Vicepresidente
+                                                    Director Comercial</h4>
+                                                <p class="card-text">Matricula CUCICBA N° 395
+                                                    Técnico en Pequeña y Mediana Empresa
+                                                    Director de Emprendimientos
+                                                    Matrícula CUCICBA N° 396 Tasador.
+                                                    </p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../images/laempresamariano.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Mariano Ramos</h4>
+                                                <p class="card-text">Director de Emprendimientos</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Director de Emprendimientos</h4>
+                                                <p class="card-text">Matrícula CUCICBA N° 396 Tasador.
+                                                    Martillero Público y Corredor (U.N.F.)
+                                                    Máster en Dirección de Empresas (I.A.E.)
+                                                    Lic. en Economí­a (U.N.T.)</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        
+            
                     </div>
-                    <div class= "perfil">
-                        <img src="images/perfil.jpg" alt="perfil1" height="200px" width="150px">
-                        <p class="nombres">Mariano Ramos</p>
-                        <p class="biografia">Estudiante de Digital House y CEO de Anchorena Propiedades</p>
-
-                    </div>
-                </section>
-
-
-
-
-
-
-
+                </div>
             </section>
-
-
-
-
-
-
-
 
         </main>
     

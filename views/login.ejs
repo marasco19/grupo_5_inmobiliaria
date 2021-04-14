@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-        <%- include("./partials/heads/headlogin") %>
+        <%- include("./partials/heads/headDef") %>
 
 <body>
     <div id="container-main">
@@ -16,12 +16,8 @@
                     <div class="login_form">
                         <div class="popup-header">
                             <p class="login-title">Iniciar sesión</p>
-                            <button class="popup-close">
-                                <i class="far fa-window-close"></i>
-                            </button>
                         </div>
-                        <div class="popup-content"></div>
-
+                        
                             <form class="contactar" action="/users/login" method="POST" class="create-form">
                                 <div class="control-formulario">
                                     <input type="email" name="email" placeholder="Email *" value="<%=(locals.oldData)? oldData.email:"" %>">
@@ -37,8 +33,11 @@
                                 </div>
                                 <div class="remember-forgot">
                                     <label class="checkbox-styled"><input checked="checked" class="remember-me" id="Login_RememberMe" name="Login_RememberMe" type="checkbox" value="true"><span>No cerrar sesión</span><input name="Login.RememberMe" type="hidden" value="false"></label>
-                                    <a href="/forgot">¿Olvidaste tu contraseña?</a>
+                                    
+                                        <a href="/users/forgot">¿Olvidaste tu contraseña?</a>
+                                    
                                 </div>
+                               
                                 <button type="submit" id="" class="bton bton_login">
                                     Iniciar sesión
                                 </button>

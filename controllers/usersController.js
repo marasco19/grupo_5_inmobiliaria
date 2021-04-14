@@ -92,6 +92,9 @@ const usersController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
+    forgot: function (req, res) {
+        res.render("forgot");
     }
 }
 
