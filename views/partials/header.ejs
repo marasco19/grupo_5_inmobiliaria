@@ -13,15 +13,22 @@
             <li class="nav-item">
               <a class="nav-link" href="/tasaciones">Tasaciones</a>
             </li>
-            <li class="nav-item">
-                <% if (!locals.isLogged) { %>
-                    <a class="nav-link" href="/users/login">Login</a>
-                <%}else{%>
-                    <a href="/users/profile" class="">Hola <%= locals.userLogged.nombre %> </a>
-                    <a href="/users/logout" class="">Logout</a>
-                    <img src="/images/users/<%= locals.userLogged.imagen %> "  style="border-radius: 100%; width: 40px">
-                    <%}%>   
+            <% if (!locals.isLogged) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            <%}else{%>  
+            <li class="nav-item dropdown">
+                <a href="" class="nav-item">Hola <%= locals.userLogged.nombre %>
+                <img src="/images/users/<%= locals.userLogged.imagen %> "  style="border-radius: 100%; width: 40px"> </a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"></a>
+              </a>  
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/users/profile">Perfil</a></li>
+                <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+              </ul>
             </li>
+            <% } %> 
           </ul>
         </div>
     </nav>
