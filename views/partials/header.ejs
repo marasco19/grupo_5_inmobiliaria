@@ -13,6 +13,16 @@
             <li class="nav-item">
               <a class="nav-link" href="/tasaciones">Tasaciones</a>
             </li>
+            <li class="nav-item dropdown">
+              <a href="" class="nav-item">Administración %>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"></a>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/admin/formCreate">Alta Propiedad</a></li>
+                <li><a class="dropdown-item" href="/admin/list">Editar propiedad</a></li>
+              </ul>
+            </li>
+            </li>
             <% if (!locals.isLogged) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
