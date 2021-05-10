@@ -52,7 +52,7 @@ Por ahora no.
 
 #03/03/2021
 Que estuvimos haciendo?
-Arrancamos con las tareas asignadas del sprint 4
+Arrancamos con las tareas asignadas del sprint 5
 Que vamos a hacer hoy? 
 Revisamos el status de cada uno para ver si tenemos algun problema.
 Que vamos a hacer mañana?
@@ -61,3 +61,62 @@ MJR: Terminar el ABM de propiedades
 HM: Analizar el listado de propiedades y comenzar con la vista de detalles
 Algún problema?
 Profundizar sobre el manejo de multiples archivos con Multer para utilizarlo en una galeria de imagenes.
+
+#10/03/2021
+Que estuvimos haciendo?
+Desarrollando los puntos de mejoras basado en el feedback de Santiago
+Que vamos a hacer hoy? 
+Revisamos el status de cada uno para ver si tenemos algun problema.
+Que vamos a hacer mañana?
+MR: Priorizara los temas de la clase. 
+HM: Analizar login
+Algún problema?
+No por el moneto
+
+#17/03/2021
+Que estuvimos haciendo?
+avanzando con los puntos asignados
+Que vamos a hacer hoy? 
+Revisamos el status de cada uno y ver si tenemos algún stopper.
+Que vamos a hacer mañana?
+MR: Trabajar con la entidad de usuario 
+MJR: Mejora de la navegabilidad del sitio
+HM: Trabajar en login y session
+Algún problema?
+No por el moneto
+
+#24/03/2021
+Que estuvimos haciendo?
+Avanzando con los puntos asignados
+Que vamos a hacer hoy? 
+Revisamos el status de cada uno y ver si tenemos algún stopper.
+Que vamos a hacer mañana?
+MR: Finalizar la entidad de usuario 
+MJR: agregado de vistas "Tasaciones" y "La Empresa"
+HM: Terminado el login y session
+Algún problema?
+No por el moneto
+
+#31/03/2021
+Que estuvimos haciendo?
+Avanzando con los puntos asignados
+Que vamos a hacer hoy? 
+Revisamos el status de cada uno y ver si tenemos algún stopper.
+Que vamos a hacer mañana?
+MR: Trabajo de CRUDpara usuario, Multer y encriptado  
+MJR: agregado de vistas "Tasaciones" y "La Empresa"
+HM: Sessión de usuario persistente
+Algún problema?
+No por el moneto
+
+#07/04/2021
+Que estuvimos haciendo?
+Avanzando con los puntos asignados
+Que vamos a hacer hoy? 
+Revisamos el status de cada uno y ver si tenemos algún stopper.
+Que vamos a hacer mañana?
+MR: Trabajo de CRUD para usuario, Multer y encriptado  
+MJR: Agregado de Boostrap para mejorar front end
+HM: Sessión de usuario persistente
+Algún problema?
+No por el moneto

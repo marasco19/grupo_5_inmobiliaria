@@ -13,9 +13,9 @@
                 <% if (!locals.isLogged) { %>
                     <a href="/users/login" class="">Login</a>
                 <% } else{%>
-                   <div>
-                    <a href="/users/profile" class="">Hola <%= locals.userLogged.nombre %> </a>
+                   <div class="UserLogin">
                     <a href="/users/logout" class="">Logout</a>
+                    <a href="/users/profile" class="">Hola <%= locals.userLogged.nombre %> </a>
                     <img src="/images/users/<%= locals.userLogged.imagen %> "  style="border-radius: 100%; width: 40px">
                     <%}%>
                 </div>
