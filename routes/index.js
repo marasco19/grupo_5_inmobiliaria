@@ -38,7 +38,8 @@ router.get('/crearcuenta', mainController.crearcuenta);
 router.get('/laempresa', mainController.laempresa);
 
 router.get('/tasaciones', mainController.tasaciones);
-
+router.post('/buscar/propiedad', mainController.buscarPropiedad);
+router.get('/buscar/carrousel/:tipoPropiedad', mainController.buscarCarrousel);
 
 router.get('/admin/list', adminController.list);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);

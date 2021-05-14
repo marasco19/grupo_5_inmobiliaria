@@ -8,24 +8,27 @@
                         <thead>
                           <tr>
                             <th scope="col">Foto</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Barrio</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">e-mail</th>
+                            <th scope="col">Tipo de usuario</th>
                           </tr>
                         </thead>
                         <tbody>
                             
-                            <% propiedadListado.forEach(function(propiedad) { %>   
+                            <% usuarioListado.forEach(function(usuario) { %>   
                                 
                             <tr>
-                                <th scope="row"><img src="/images/propiedades/<%=propiedad.fotos%>" width="388" height="226"></th>
-                                <td><%=propiedad.titulo%></td>
-                                <td><%=propiedad.barrio%></td>
+                                <th scope="row"><img src="/images/users/<%=usuario.imagen%>" width="200" height="100"></th>
+                                <td><%=usuario.nombre%></td>
+                                <td><%=usuario.apellido%></td>
+                                <td><%=usuario.email%></td>
+                                <td> <%= (usuario.tipo_usuario==1)? "Administrador" : "Cliente" %></td>
                                 <td class="text-right">
-                                    <form method="GET" action="/admin/formEdit/<%=propiedad.id %>">
+                                    <form method="GET" action="/users/formEdit/<%=usuario.id %>">
                                         <button class="btn btn-primary badge-pill">Editar</button>
                                     </form>    
-                                    <form action="/admin/<%=propiedad.id %>?_method=DELETE" method="POST">
+                                    <form action="/users/delete/<%=usuario.id %>" method="GET">
                                         <button class="btn btn-danger badge-pill">Borrar</button>
                                     </form>    
                                 </td>

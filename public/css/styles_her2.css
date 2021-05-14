@@ -320,18 +320,18 @@ a {
 }
 
 /* Propiedades en oferta */
-.destacado .grid .item .mask .grid .ofertas{
+.destacado .grid .item .mask .grid .ofertas {
   flex-direction: row;
 }
 
-.destacado .grid .item .mask .grid .ofertas a{
+.destacado .grid .item .mask .grid .ofertas a {
   width: 100%;
 }
-.destacado .grid .item .mask .grid .ofertas a img{
+.destacado .grid .item .mask .grid .ofertas a img {
   width: 60%;
   border-radius: 10px;
 }
-.destacado .grid .item .mask .grid col1{
+.destacado .grid .item .mask .grid col1 {
   width: 100%;
 }
 
@@ -675,4 +675,227 @@ section .propiedad_detail {
   /* .content-nav {
     display: none;
   } */
+}
+
+/*buscador de propiedades*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
+
+h2 {
+  float: left;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 14px;
+  position: relartive;
+  z-index: 3;
+  margin-top: 30px;
+}
+h2 span {
+  font-family: "Libre Baskerville", serif;
+  display: block;
+  font-size: 45px;
+  text-transform: none;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+h2 a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.head {
+  float: left;
+  width: 100%;
+}
+.search-box1 {
+  width: 90%;
+  margin: 0 auto 40px;
+  box-shadow: 10px 13px 0 rgba(0, 0, 0, 0.2);
+  border-color: black;
+  border-style: solid 1px;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.media .fav-box {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 4px;
+  color: #e74c3c;
+}
+.listing-block {
+  background: #fff;
+  height: 500px;
+  padding-top: 20px;
+  overflow-y: scroll;
+}
+.slimScrollDiv {
+  width: 41% !important;
+}
+.media {
+  background: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  -webkit-box-align: start;
+  align-items: flex-start;
+}
+.media img {
+  width: 200px;
+  margin: 0;
+  height: 136px;
+}
+.media-body {
+  border: 1px solid #bcbcbc;
+  border-left: 0;
+  height: 136px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.pl-3,
+.px-3 {
+  padding-left: 1rem !important;
+}
+.media .price {
+  float: left;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  color: #4765ab;
+  padding-top: 10px;
+}
+.media .price small {
+  display: block;
+  font-size: 17px;
+  color: #232323;
+  padding-top: 5px;
+}
+.media .stats {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+.media .stats span {
+  float: left;
+  margin-right: 10px;
+  font-size: 15px;
+}
+.media .stats span i {
+  margin-right: 7px;
+  color: #4765ab;
+}
+.media .address {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #888;
+}
+.media .fav-box {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 4px;
+  color: #e74c3c;
+}
+
+.map-box {
+  background-color: #a3ccff;
+}
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/heads/headDef") %>
+<body>
+        <%- include("./partials/header") %> 
+        <main>
+            <section id="hero">
+                <div class="container">
+                    <div class="content-center">
+                        <h1>Expertos en propiedades</h1>
+                    </div>
+                    <form action="/buscar/propiedad" method="POST">
+                        <div class="form-search">
+                            <div class="radio-group">
+                                <div>
+                                    <input type="radio" name="propiedad" id="departamentos" value="departamentos">
+                                    <label for="departamentos" class="btn">Departamentos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="emprendimientos" value="emprendimientos">
+                                    <label for="emprendimientos" class="btn">Emprendimientos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="casas" value="casas">
+                                    <label for="casas" class="btn">Casas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="oficinas" value="oficinas">
+                                    <label for="oficinas" class="btn">Oficinas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="locales" value="locales">
+                                    <label for="locales" class="btn">Locales</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="terrenos" value="terrenos">
+                                    <label for="terrenos" class="btn">Terrenos</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="propiedad" id="depositos" value="depositos">
+                                    <label for="depositos" class="btn">Depositos</label>
+                                </div>
+                            </div>
+                            <div id="searchbox" class="search-content v1">
+                                <div class="radio-group-2">
+                                    <div>
+                                        <input type="radio" id="comprar" name="comprar_alquilar" checked="" value="venta">
+                                        <label for="comprar">VENTA</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="alquilar" name="comprar_alquilar" checked="" value="alquiler">
+                                        <label for="comprar">ALQUILER</label>
+                                    </div>
+                                </div>
+                                <div class="input-search desktop_767 ">
+                                    <input type="text" autocomplete="off" placeholder="Ingresá ubicación, barrio o palabra clave" name="quicksearch" class="quicksearch ui-autocomplete-input">
+                                    <button type="submit"><span class="btn orange search_propiedades"><ion-icon name="search-outline" class="icon-find"></ion-icon> Buscar </span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            
+            <% if(typeof resultados == 'object' && resultados.length > 0){ %>           
+            <section class="head">
+                <div class="container">
+                    <h2 class="text-center"><span><%=resultados.length%> Resultados</span></h2>
+                </div>
+            </section>
+            <section class="search-box1">
+                <div class="container-fluid">
+                    <% resultados.forEach(function(propiedad) { %>
+                    <div class="row">
+                        <div class="col-md-12 listing-block">
+                            <div class="media">
+                                <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                                <img class="d-flex align-self-start" src="/images/propiedades/<%=propiedad.fotos%>?h=350&auto=compress&cs=tinysrgb" alt="imagen propiedad">
+                                <div class="media-body pl-3">
+                                <div class="price">$ <%=propiedad.precio%><small><%=propiedad.barrio%></small></div>
+                                <div class="stats">
+                                <span><i class="fa fa-arrows-alt"></i><%=propiedad.suptotal%></span>
+                                <span><i class="fa fa-bath"></i><%=propiedad.banios%> Baños</span>
+                            </div>
+                            <div class="address"><%=propiedad.direccion%></div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </section>
+                <% } else { %>
+                    <section class="head">
+                        <div class="container">
+                            <h2 class="text-center"><span>0 Resultados</span></h2>
+                        </div>
+                    </section>
+                <% } %> 
+            </section>                       
+        </main>
+        <%- include("./partials/footer") %> 
+    </div>   
+</body>
+</html>

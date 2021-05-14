@@ -1,3 +1,4 @@
+const db = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,7 +7,11 @@ const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
 const adminController = {
     list: function (req, res) {
         
-        res.render("listProperties", propiedadListado = propiedades);
+        db.propiedad.findAll()
+        .then(function(respuesta){
+            res.render("listProperties", {propiedadListado: respuesta})
+        })
+
     },
     formCreate:  function(req, res){
         res.render("formCreate");

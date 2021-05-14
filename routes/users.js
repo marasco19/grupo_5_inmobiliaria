@@ -25,11 +25,20 @@ router.get('/login', guestMiddleware, usersController.login);
 // Procesar el login
 router.post('/login', usersController.loginProcess);
 
+//forgot
+router.get('/forgot', usersController.forgot);
 // Perfil de Usuario
 router.get('/profile/', authMiddleware, usersController.profile);
 
 // Logout
 router.get('/logout/', usersController.logout);
 
+router.get('/list/', usersController.list);
+
+router.get('/formEdit/:id', usersController.edit);
+router.post('/formEdit/:id', uploadFile.single('imagen'), validations, usersController.update);
+
+router.get('/delete/:id', usersController.delete);
+router.post('/delete/:id', usersController.destroy);
 
 module.exports = router;

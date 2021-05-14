@@ -62,6 +62,10 @@ HM: Analizar el listado de propiedades y comenzar con la vista de detalles
 Algún problema?
 Profundizar sobre el manejo de multiples archivos con Multer para utilizarlo en una galeria de imagenes.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd0383af8fb406865e84e556336c749572cf6807
 #10/03/2021
 Que estuvimos haciendo?
 Desarrollando los puntos de mejoras basado en el feedback de Santiago
@@ -71,7 +75,11 @@ Que vamos a hacer mañana?
 MR: Priorizara los temas de la clase. 
 HM: Analizar login
 Algún problema?
+<<<<<<< HEAD
 No por el moneto
+=======
+No por el momento
+>>>>>>> cd0383af8fb406865e84e556336c749572cf6807
 
 #17/03/2021
 Que estuvimos haciendo?
