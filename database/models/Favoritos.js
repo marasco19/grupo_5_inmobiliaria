@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
     favoritos.associate = function(models){
         favoritos.hasMany(models.propiedad, {
             as: "es-favorita-de",
-            foreignKey: "propiedad_id"
+            foreignKey: "id"
         });
         favoritos.hasMany(models.usuario, {
             as: "es-favorita-del_usuario",
-            foreignKey: "usuario_id"
+            foreignKey: "id"
         });
                 
     }

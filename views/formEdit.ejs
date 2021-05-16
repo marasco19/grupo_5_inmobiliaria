@@ -48,11 +48,11 @@
                                     <label>Tipo de propiedad:</label>
                                     <select type="select" id="tipopropiedad"  class="form-control" name="tipopropiedad">
                                          <%
-                                        var options = ["departamento", "casa", "oficina", "terreno", "local"];
+                                        var options = ["Departamento", "Casa", "Oficina", "Terreno", "local"];
                                         for ( var i = 0; i < options.length; i++ ){
                                             var selected = ( propiedad.tipopropiedad == options[i] ) ? "selected" : "";
                                         %>
-                                        <option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option>
+                                        <option value="<%= i + 1 %>" <%=selected %>><%=options[i] %></option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Descripción general:</label>
-                                    <textarea name="descripciongral" class="form-control"  value="<%= propiedad.descripciongral %>"></textarea>
+                                    <textarea name="descripciongral" class="form-control"><%= propiedad.descripciongral %></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
@@ -131,7 +131,7 @@
                                 </div> 
                                 <div class="form-group">    
                                     <label for="abl">ABL:</label><br>     
-                                    <input type="number" name="abl" class="form-control" value="<%= propiedad.abl %> ">
+                                    <input type="number" name="abl" class="form-control" value="<%= propiedad.abl %>" >
                                 </div>
                                 <div class="form-group">    
                                     <label for="tipopiso">Tipo de piso:</label><br>     
@@ -139,7 +139,7 @@
                                 </div> 
                                 <div class="form-group">    
                                     <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
-                                    <input type="number" name="nropisos" class="form-control" value="<%= propiedad.nropisos %> ">
+                                    <input type="number" name="nropisos" class="form-control" value="<%= (propiedad.nropisos==null)?0:propiedad.nropisos %> ">
                                 </div>
                                 <div class="form-group">    
                                     <label for="dptosxpisos">Deptos. por Piso:</label><br>     

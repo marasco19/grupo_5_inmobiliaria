@@ -41,13 +41,15 @@ app.use(methodOverride('_method'));
 // view engine setup
 app.set('view engine', 'ejs');
 
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
 // Levantando el servidor para que escuche en el puerto 3000
 app.listen(3000, () => console.log("Servidor corriendo en puerto 3000") );
 
 // enviando una pagina HTML con la ruta de Root. (http://localhost:3000)
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 
 // app.get('/productDetail', (req,res) => {

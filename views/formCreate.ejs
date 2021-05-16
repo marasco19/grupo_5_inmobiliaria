@@ -13,6 +13,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <form action="/admin" method="POST" enctype="multipart/form-data" id="product-form" class="card-body" >
+                                <ul class="errores"></ul>
                                 <div class="card-header">
                                     <h5>Información General:</h5>
                                 </div>
@@ -29,19 +30,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Tipo de operación:</label>
-                                    <select type="select" name="tipoperacion"  class="form-control">
-                                        <option value="alquiler">Alquiler</option>
-                                        <option value="venta" selected>Venta</option>
+                                    <select type="select" name="tipooperacion"  class="form-control">
+                                        <option value="Alquiler">Alquiler</option>
+                                        <option value="Venta" selected>Venta</option>
                                     </select>    
                                 </div>
                                 <div class="form-group">
                                     <label>Tipo de propiedad:</label>
                                     <select type="select" name="tipopropiedad"  class="form-control">
-                                        <option value="departamento"  selected>Departamento</option>
-                                        <option value="casa">Casa</option>
-                                        <option value="oficina">Oficina</option>
-                                        <option value="terreno">Terreno</option>
-                                        <option value="local">Local</option>
+                                        <option value="1"  selected>Departamento</option>
+                                        <option value="2">Casa</option>
+                                        <option value="3">Oficina</option>
+                                        <option value="4">Terreno</option>
+                                        <option value="5">Local</option>
                                     </select>    
                                 </div>
                                 <div class="form-group">
@@ -66,7 +67,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Descripción general:</label>
-                                    <textarea name="decripciongral" class="form-control"></textarea>
+                                    <textarea name="descripciongral" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
@@ -194,6 +195,6 @@
         </main>
         <%- include("./partials/footer") %> 
     </div>
-
+    <script src="/js/propiedadValidator.js"></script>
 </body>
 </html>

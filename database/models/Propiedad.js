@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         titulo:DataTypes.STRING(255),
         estado:DataTypes.STRING(255),
-        tipooercion:DataTypes.STRING(45),
+        tipoopercion:DataTypes.STRING(45),
         tipopropiedad_id:DataTypes.INTEGER,
         precio:DataTypes.STRING(255),
         direccion:DataTypes.STRING(255),

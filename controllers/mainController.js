@@ -1,5 +1,7 @@
+const db = require('../database/models');
 const fs = require('fs');
 const path = require('path');
+const { Op } = require("sequelize");
 
 const propiedadesFilePath = path.join(__dirname, '../data/propiedadesDataBase.json');
 const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
@@ -31,26 +33,28 @@ const mainController = {
     },
     buscarPropiedad: function (req, res) {
         
-        var results = [];
-        for (var i=0 ; i < propiedades.length ; i++)
-        {
-            if (propiedades[i]['tipopercion'] == req.body.comprar_alquilar && propiedades[i]['tipopropiedad'] && req.body.propiedad && propiedades[i]['barrio'] == req.body.quicksearch ) {
-                results.push(propiedades[i]);
-            }
-        }
-        
-        res.render("indexResultados", {resultados: results});
+        db.propiedad.findAll({
+            where: {
+               tipopropiedad_id:  req.body.propiedad,
+               tipoopercion: req.body.comprar_alquilar,
+               barrio: {[Op.like]: '%'+req.body.quicksearch+'%'} 
+            },
+            order:[['id','DESC']], limit: 10 })
+        .then(function(respuesta){
+            res.render("indexResultados", {resultados: respuesta});
+        })
     },
     buscarCarrousel: function (req, res) {
-        var results = [];
-        for (var i=0 ; i < propiedades.length ; i++)
-        {
-            if (propiedades[i]['tipopropiedad'] && req.params.tipoPropiedad) {
-                results.push(propiedades[i]);
-            }
-        }
-        
-        res.render("indexResultados", {resultados: results});
+
+        db.propiedad.findAll({
+            where: {
+               tipopropiedad_id:  req.params.tipoPropiedad
+            },
+            order:[['id','DESC']], limit: 10 })
+        .then(function(respuesta){
+            res.render("indexResultados", {resultados: respuesta});
+        })
+
     }
 }
 

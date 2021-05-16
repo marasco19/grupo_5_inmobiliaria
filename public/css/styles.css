@@ -1033,6 +1033,22 @@ section .section-title {
   a {
     background-color: transparent;
   }
+  .Product-img img {
+    width: 100%;
+  }
+  .table thead th {
+    color: black;
+  }
+  .table td,
+  .table th {
+    color: black;
+  }
+  .col-lg-10 {
+    color: black;
+  }
+  .fa.fa-arrows-alt:before {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1144,4 +1160,292 @@ h2 a {
 
 .map-box {
   background-color: #a3ccff;
+}
+
+.is-valid {
+  color: #198754;
+}
+
+.is-invalid {
+  color: #842029;
+  border-color: #842029;
+}
+
+.alert-warning {
+  color: #842029;
+  background-color: #f8d7da;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/*adminDetalle*/
+/*product detail*/
+/*encabezado*/
+section .propiedad_detail {
+  height: 330px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.tabs .tab label {
+  margin-top: -44px;
+  height: 38px;
+}
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  flex: wrap;
+  padding: 20px;
+  background-color: rgba(223, 223, 223, 0.5);
+}
+.tabs input {
+  text-decoration: none;
+}
+
+.tabs .tab label i {
+  font-size: 16px;
+}
+.tabs .tab label {
+  margin-top: -60px;
+  height: 50px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  min-width: initial;
+  width: 100% !important;
+  max-width: initial;
+  margin-right: 12px;
+  border-radius: 90px;
+}
+.tabs .tab label {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  color: #333;
+  max-width: 80px;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tabs.ready .tab {
+  flex: 1;
+}
+
+/*galeria de imagenes*/
+.galeria {
+  width: 100%;
+  height: 330px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(223, 223, 223, 0.5);
+}
+
+.galeria .open-galeria {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #eae9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 1px 1px 3px #0000007a;
+}
+
+.galeria img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.precio {
+  font-size: 32px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  padding-top: 10px;
+}
+
+/*detalle del producto*/
+.caracteristicas {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.caracteristicas p {
+  color: #333333;
+  margin: 0;
+}
+.caracteristicas .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 984px;
+  color: black;
+}
+.content-dir h1 {
+  font-size: 24px;
+  line-height: 36px;
+  color: black;
+  font-weight: 900;
+  margin: 0;
+}
+.caracteristicas .container .main-description .top .content-dir h2 {
+  font-size: 20px;
+  line-height: 22px;
+  color: black;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 6px;
+}
+.caracteristicas .container .main-description .top .content-dir h3 {
+  font-size: 32px;
+  color: black;
+  font-weight: 750;
+  margin: 0;
+}
+
+.caracteristicas .container .main-description .top {
+  flex-direction: column;
+  text-align: center;
+}
+
+.boton-favorito {
+  background-color: #096722;
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: fixed;
+  right: 10px;
+  width: 150px;
+  bottom: 50px;
+  height: 60px;
+}
+
+.boton-editar,
+.boton-borrar {
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: fixed;
+  right: 10px;
+  width: 80px;
+}
+
+.boton-editar {
+  background-color: #0996b9;
+  bottom: 50px;
+}
+
+.boton-borrar {
+  background-color: #c50808;
+  bottom: 10px;
+}
+
+/*formulario contacto*/
+.formulario-contacto {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.create-form {
+  padding: 20px 15px;
+  background-color: white;
+}
+
+.formulario-contacto .wrapper h4 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 6px;
+}
+.formulario-contacto .wrapper .tel {
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: flex-end;
+}
+.formulario-contacto .wrapper strong {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+.formulario-contacto .wrapper .contactar {
+  margin-top: 10px;
+}
+
+.formulario-contacto .formulario .wrapper > div {
+  width: 100%;
+  max-width: 300px;
+  padding: 0 16px;
+  padding-bottom: 12px;
+  padding-top: 14px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 40%);
+}
+.formulario-contacto .wrapper .contactar input {
+  width: 90%;
+  height: 40px;
+  border: 1px solid #e5e3e3;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+.formulario-contacto .wrapper .contactar textarea {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  border: 1px solid #e5e3e3;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+  padding-top: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.boton-enviar {
+  background-color: #096722;
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  align-content: center;
 }

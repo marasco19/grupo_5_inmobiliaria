@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             as: "tipousuario",
             foreignKey: "tipo_usuario"
         });
+    }    
     
     return usuario;
 }
