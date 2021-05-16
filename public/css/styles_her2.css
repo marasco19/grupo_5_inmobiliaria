@@ -28,6 +28,14 @@ body {
   background-size: cover;
 }
 
+div .UserLogin{
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+
+}
+
+
 html {
   color: #222;
   font-size: 1em;

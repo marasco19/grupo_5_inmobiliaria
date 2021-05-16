@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/marasco19/grupo_5_inmobiliaria#readme",
   "dependencies": {
+    "-": "^0.0.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cookies": "^0.8.0",
@@ -28,8 +29,13 @@
     "method-override": "^3.0.0",
     "multer": "^1.4.2",
     "mysql2": "^2.2.5",
+<<<<<<< HEAD
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
+=======
+    "save": "^2.4.0",
+    "sequelize": "^6.6.2"
+>>>>>>> 8eee7162f1ee3e24cf3a545c26edbb336ba8eb9d
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

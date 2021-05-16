@@ -1,14 +1,25 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const User = require('../models/User');
+const db = require('../database/models');
 
 
 
 const usersController = {
+   
+    list: (req, res)=>{
+               
+            db.usuario.findAll()
+            .then(function(respuesta){
+                res.render("listUsers", {usuarioListado: respuesta})
+            })
+    },
+
     register: (req, res) => {
         res.render('userRegisterForm');
 	},
-    processRegister: (req, res) => {
+    // Crear Usuario
+    processRegister: async function (req, res){
         
         const resultValidation = validationResult(req);
         console.log(req.body);
@@ -36,16 +47,38 @@ const usersController = {
                 oldData: req.body
             });
         }
-        let userCreated = User.create(userToCreate);
+        
+        // Guarda el usaurio en la base de datos
+        console.log(userToCreate);
+        (userToCreate.tipo_usuario == "Agente")? userToCreate.tipo_usuario = 1: userToCreate.tipo_usuario = 2
+        
+        await db.usuario.create({
+            nombre: userToCreate.nombre,
+            apellido: userToCreate.apellido,
+            email: userToCreate.email,
+            tipo_usuario: userToCreate.tipo_usuario,
+            password: userToCreate.password,
+            imagen: userToCreate.imagen
+        })
+
         return res.redirect('/login'); 
     },
     login: (req, res) => {
         res.render("login");
     },
     loginProcess: (req, res) => {
-          
-        let userInDB = User.findByField('email', req.body.email);
-        if (!userInDB){
+         
+        // let userInDB = User.findByField('email', req.body.email);
+        // BUSCAR USUARIO EN BDD
+         let userInDB;
+            db.usuario.findAll({
+             where:{ email:  req.body.email}
+            }).then(resultado=>{
+                userInDB = resultado;
+                
+            
+            
+        if (userInDB.length == 0){
             return res.render('login',{
                 errors: {
                     email: {
@@ -56,8 +89,8 @@ const usersController = {
             });
         }else{
             // Chequear password
-
-            if (!bcryptjs.compareSync(req.body.password, userInDB.password)){
+            // console.log(userInDB[0].dataValues.password);
+            if (!bcryptjs.compareSync(req.body.password, userInDB[0].dataValues.password)){
                 return res.render('login',{
                     errors: {
                         password: {
@@ -69,7 +102,8 @@ const usersController = {
             }else{
                 
                 delete userInDB.password;
-                req.session.user = userInDB;
+                // req.session.user = userInDB;
+                req.session.user = userInDB[0].dataValues;
                 if(req.body.Login_RememberMe){
                     res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60})
                 }
@@ -78,8 +112,7 @@ const usersController = {
                 
             }
         }
-
-
+    }) /* Fin del select db.usuario.findAll */
 
 
 
@@ -95,7 +128,52 @@ const usersController = {
     },
     forgot: function (req, res) {
         res.render("forgot");
+    },
+    
+    edit: async function (req, res) {
+
+        let Usuario = await db.usuario.findByPk(req.params.id);
+        res.render("userEditForm", {oldData: Usuario} );
+
+    },
+    update: async function (req, res) {
+        // FALTA *** impactar la modificación en la BDD
+        console.log(req.body);
+        (req.body.tipo_usuario == "Agente")? req.body.tipo_usuario = 1: req.body.tipo_usuario = 2
+        // imagen: req.file.filename
+
+        let userToUpdate;
+        if (req.file){
+         userToUpdate = {
+            ...req.body,
+            imagen: req.file.filename
+        }} else{
+
+         userToUpdate = req.body;
+        }
+
+        await db.usuario.update(
+            {...userToUpdate},
+            {
+                where: {id: req.params.id}
+            }
+        );
+
+        res.redirect('/users/list');
+
+
+    },
+    delete: async function (req, res) {
+        let Usuario = await db.usuario.findByPk(req.params.id);
+        res.render('userDelete',{Usuario}); 
+    },
+    destroy: async function (req, res) {
+        let usuario = await db.usuario.findByPk(req.params.id);
+        await usuario.destroy();
+        res.redirect("/users/list");
     }
+
+
 }
 
 module.exports = usersController;

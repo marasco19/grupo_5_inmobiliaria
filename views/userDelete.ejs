@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/heads/headDef.ejs") %>
+    <div id="container-main">
+        <%- include("./partials/header") %> 
+        <main>
+
+<body>
+
+    <h4>¿Estas seguro de querer borrar el siguiente usuario: <%= Usuario.nombre + " " + Usuario.apellido %>?</h4>
+    <p>
+        <form action="/users/delete/<%= Usuario.id %>" method="POST">
+            <br>
+            <p> <button class="btn btn-danger badge-pill" type="submit">Borrar usuario</button>
+            
+            <a class="btn btn-primary badge-pill" href="/users/list">Listado de usuarios</a></p>
+
+        </form>
+    </p>
+    </main>
+    <%- include("./partials/footer") %> 
+</body>
+
+</html>

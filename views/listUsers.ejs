@@ -1,0 +1,47 @@
+<%- include("./partials/heads/headDef.ejs") %>
+    <div id="container-main">
+        <%- include("./partials/header") %> 
+        <main>
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">e-mail</th>
+                            <th scope="col">Tipo de usuario</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <% usuarioListado.forEach(function(usuario) { %>   
+                                
+                            <tr>
+                                <th scope="row"><img src="/images/users/<%=usuario.imagen%>" width="200" height="100"></th>
+                                <td><%=usuario.nombre%></td>
+                                <td><%=usuario.apellido%></td>
+                                <td><%=usuario.email%></td>
+                                <td> <%= (usuario.tipo_usuario==1)? "Administrador" : "Cliente" %></td>
+                                <td class="text-right">
+                                    <form method="GET" action="/users/formEdit/<%=usuario.id %>">
+                                        <button class="btn btn-primary badge-pill">Editar</button>
+                                    </form>    
+                                    <form action="/users/delete/<%=usuario.id %>" method="GET">
+                                        <button class="btn btn-danger badge-pill">Borrar</button>
+                                    </form>    
+                                </td>
+                            </tr>
+                          <% }) %>
+                        </tbody>
+                      </table>
+                </div>
+                
+            </div>          
+        </main>
+        <%- include("./partials/footer") %> 
+    </div>
+
+</body>
+</html>

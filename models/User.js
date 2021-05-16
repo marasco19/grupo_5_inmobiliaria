@@ -1,3 +1,4 @@
+const db = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 
@@ -5,11 +6,20 @@ const User = {
     usuariosFilePath : path.join(__dirname, '../data/user.json'),
 
     getData: function(){
-        return JSON.parse(fs.readFileSync(this.usuariosFilePath, 'utf-8'));
+        
+         return JSON.parse(fs.readFileSync(this.usuariosFilePath, 'utf-8'));
+        // db.usuario.findAll()
+        // .then(function(respuesta){
+        //     //  console.log(respuesta);
+        //     return respuesta;
+        // })
+
+
     },
     findAll: function(){
-        return this.getData();
-    },
+         return  this.getData();
+            },
+
     generateId: function(){
         let allUsers = this.findAll();
         let lastUser = allUsers.pop();

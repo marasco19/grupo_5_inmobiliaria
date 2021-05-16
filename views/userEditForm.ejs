@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+        <%- include("./partials/heads/headDef") %>
+<body>
+    <div id="container-main">
+        <%- include("./partials/header") %> 
+        <main>
+            <section class="login">
+                <div class="log_container">
+                    <div class="login_form">
+                        <form class="contactar" action="/users/formEdit/<%= oldData.id %>" method="POST" class="create-form" enctype="multipart/form-data">
+                            <div class="control-formulario">
+                                <label><b>Nombre:</b></label>
+                                <input type="text" name="nombre" class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>">
+                                <% if (locals.errors && errors.nombre) { %>
+									<div class="text-danger">
+										<%= errors.nombre.msg %> 
+									</div>
+								<% } %>
+                            </div>
+                            <div class="control-formulario">
+                                <label><b>Apellido:</b></label>
+                                <input type="text" name="apellido" class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.apellido : null %>">
+                                <% if (locals.errors && errors.apellido) { %>
+									<div class="text-danger">
+										<%= errors.apellido.msg %> 
+									</div>
+								<% } %>
+                            </div>    
+                            <div class="control-formulario">
+                                <label><b>Telefono:</b></label>
+                                <input type="number" name="telefono">
+                            </div>    
+                            <div class="control-formulario">
+                                <label><b>Email:</b></label>
+                                <input type="email" name="email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.email : null %>">
+                                <% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+                            </div>    
+                            <div class="control-formulario">
+                                <label><b>Tipo de usuario:</b></label>
+                                <select name="tipo_usuario" class="form-select <%= locals.errors && errors.tipo_usuario ? 'is-invalid' : null %>">
+                                    <option value="">Elegí un tipo de usuario</option>
+                                    <%  
+                                    let tipo_usuario = ['Usuario', 'Agente'];
+                                %>
+                                <% for (const tipo of tipo_usuario) { %>
+                                    <option 
+                                        value="<%= tipo %>"
+                                        <%= locals.oldData && (tipo === oldData.tipo_usuario) ? 'selected' : null %> 
+                                    > <%= tipo %> </option>
+                                <% } %>
+                                </select>    
+                            </div>    
+                            
+                            <div class="control-formulario">
+                                <label><b>Imagen de perfil::</b></label>
+                                <input type="file" id="imagen" name="imagen" class="form-control <%= locals.errors && errors.imagen ? 'is-invalid' : null %>">
+                                <% if (locals.errors && errors.imagen) { %>
+									<div class="text-danger">
+										<%= errors.imagen.msg %>
+									</div>
+								<% } %>
+                            </div>                        
+                            <button type="submit" class="bton bton_login">
+                                Aceptar
+                            </button>
+                        </form>  
+                    </div>
+                </div> 
+            </section>  
+        </main>
+        
+        <%- include("./partials/footer") %> 
+        
+    </div>   
+</body>
+</html>
