@@ -4,3 +4,4 @@ public/images/propiedades/
 public/images/users/
 data/propiedadesDataBase.json
 data/user.json
+database/config/config.js
