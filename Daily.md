@@ -62,10 +62,6 @@ HM: Analizar el listado de propiedades y comenzar con la vista de detalles
 Algún problema?
 Profundizar sobre el manejo de multiples archivos con Multer para utilizarlo en una galeria de imagenes.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cd0383af8fb406865e84e556336c749572cf6807
 #10/03/2021
 Que estuvimos haciendo?
 Desarrollando los puntos de mejoras basado en el feedback de Santiago
@@ -75,11 +71,7 @@ Que vamos a hacer mañana?
 MR: Priorizara los temas de la clase. 
 HM: Analizar login
 Algún problema?
-<<<<<<< HEAD
 No por el moneto
-=======
-No por el momento
->>>>>>> cd0383af8fb406865e84e556336c749572cf6807
 
 #17/03/2021
 Que estuvimos haciendo?
@@ -128,3 +120,66 @@ MJR: Agregado de Boostrap para mejorar front end
 HM: Sessión de usuario persistente
 Algún problema?
 No por el moneto
+
+#14/04/2021
+Que estuvimos haciendo?
+Organizamos quien iba a tomar cada tarea
+Que vamos a hacer hoy? 
+Actualizamos el dashboard y analizamos los requerimientos
+Que vamos a hacer mañana?
+MR: Diagrama de base de datos
+MJR: Creación de carpeta de Sequelize
+HM: CRUD USUARIOS
+Algún problema?
+No por el momento
+
+#21/04/2021
+Que estuvimos haciendo?
+Charlamos sobre el avance de cada uno, y actualizamos el Trello
+Que vamos a hacer hoy? 
+Analizamos el diseño de las tablas.
+Que vamos a hacer mañana?
+MR: Carpeta Sequelize
+MJR: Script de estructura
+HM: CRUD USUARIOS
+Algún problema?
+No por el momento
+
+#28/04/2021
+Que estuvimos haciendo?
+Charlamos sobre el avance de cada uno, y actualizamos el Trello
+Que vamos a hacer hoy? 
+Analizamos la navegación integral de la pagina
+Que vamos a hacer mañana?
+MR: Armado de modelos
+MJR: Script de estructura
+HM: CRUD Productos
+Algún problema?
+No por el momento
+
+#05/05/2021
+Que estuvimos haciendo?
+Charlamos sobre el avance de cada uno, y actualizamos el Trello
+Que vamos a hacer hoy? 
+Analizamos los temas y problemas pendientes para buscar una solución.
+Que vamos a hacer mañana?
+MR: Finalización de modelos
+MJR: Finalización de Script de estructura
+HM: Finalización de CRUD Productos
+Algún problema?
+No por el momento
+
+
+#12/05/2021
+Que estuvimos haciendo?
+Cargamos el trello con los nuevos requerimientos
+Que vamos a hacer hoy? 
+Analizamos los formularios para determinar las validaciones
+Que vamos a hacer mañana?
+MR: Registro Usuarios
+MJR: Login Usuarios
+HM: Creación y modificación de productos.
+Algún problema?
+No por el momento
+
+

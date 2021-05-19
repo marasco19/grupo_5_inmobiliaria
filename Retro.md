@@ -46,5 +46,30 @@ Retro 27/01/2021 Sprint 1
     No tenemos comentarios por el momento.
 5 - Dejar de hacer
     No dejar las cosas para ultimo momento.
+
+#Retro 12/03/2021 Sprint 5
+1 - Comenzar a hacer
+    Impletamos toda la logica en los formularios de registro de usuarios.
+2 - Hacer más
+    Analizar en profundidad el resto de los formularios.
+3 - Continuar haciendo
+    Seguir con reuniones de check points
+    No dejarnos estar si algo no nos sale.    
+4 - Hacer menos
+    No tenemos comentarios por el momento.
+5 - Dejar de hacer
+    No dejar las cosas para ultimo momento.
+
+#Retro 05/05/2021 Sprint 6
+1 - Comenzar a hacer
+    Definir el modelo para la base de datos y luego impletarlo en sequelize
+2 - Hacer más
+    Reforzar conocimientos de como generar los modelos de base de datos.
+3 - Continuar haciendo
+    Seguir con reuniones de check points, tomar dimensión del alcance de nuestra pagina.    
+4 - Hacer menos
+    No tenemos comentarios por el momento.
+5 - Dejar de hacer
+    No dejar las cosas para ultimo momento.
     
     
