@@ -92,8 +92,12 @@
                                             <td><span><i class="fa fa-arrows-alt"></i><%=propiedad.suptotal%></span></td>
                                             <td><span><i class="fa fa-bath"></i><%=propiedad.banios%> Baños</span></td>
                                             <td class="actions" data-th="" style="width:20%;">
-                                                <button class="btn btn-info btn-sm">Agregar a favoritos</button>
-                                                <button class="btn btn-danger btn-sm">Más info</button>								
+                                                <form method="GET" action="/admin/addFavorito/<%=propiedad.id%>">
+                                                    <button class="btn btn-info btn-sm">Agregar a favoritos</button>
+                                                </form>
+                                                <form method="GET" action="/admin/<%=propiedad.id%>/detalleAdmin/">
+                                                    <button class="btn btn-danger btn-sm">Más info</button>		
+                                                </form>						
                                             </td>
                                             </tr>
                                         <% }) %>

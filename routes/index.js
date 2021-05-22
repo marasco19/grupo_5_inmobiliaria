@@ -42,6 +42,9 @@ router.post('/buscar/propiedad', mainController.buscarPropiedad);
 router.get('/buscar/carrousel/:tipoPropiedad', mainController.buscarCarrousel);
 
 router.get('/admin/list', adminController.list);
+router.get('/admin/listfavoritos', adminController.listFavoritos);
+router.get('/admin/addFavorito/:idPropiedad', adminController.addFavorito);
+router.get('/admin/deleteFavorito/:idPropiedad', adminController.deleteFavorito);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
 
 router.get('/admin/formCreate', adminController.formCreate);

@@ -72,15 +72,16 @@ insert into propiedad (id, titulo, estado, tipoopercion, tipopropiedad_id, preci
 insert into propiedad (id, titulo, estado, tipoopercion, tipopropiedad_id, precio, direccion, barrio, latitud, longitud, descripciongral, suptotal, supcubierta, supdescubierta, ambientes, dormitorios, banios, medcocina, tipococina, lavadero, balcon, baulera, palier, recepcion, calefaccion, aire, expensas, abl, tipopiso, nropisos, dptosxpisos, ascensor, gimnasio, lavaderocen, sum, solarium, salonfiestas, guardabici, piscina, quincho, parrilla, seguridad, grupoelec, youtube, vimeo, plano, fotos) values (10, 'Cabral Sgto. 800', 'Activo', 'alquiler', 2, '650000', 'Cabral Sgto. 800', 'Retiro', 22.6166667, 6.300757, 'Excelente piso en edificio moderno entre medianeras. Piso al frente con mucha luz. Living de amplias dimensiones, comedor diario, escritorio y toilette. 4 dormitorios, 2 en suite, 3 baños. Cocina impecable con un agradable comedor de diario, lavadero y dos dependencias de servicio. Baulera,2 cocheras fijas. Grupo electrógeno. Su estado es de época. Orientación Este.', 22416, 2263, 95964, 1, 2, 1, '2 x 3', 'americana', 'true', 'false', 'true', 'false', 'true', 'true', 'false', 12500, 2000, 'Piso completo', 2, 1, 2, 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true', 'true', 'false', 'V4394XD', 'I70711', 'planos-1615244431553.jpg', 'fotos-1615244431572.jpg');
 
 /*TABLA FAVORITOS*/
-insert into favoritos (id, propiedad_id, usuario_id) values (1, 1, 20);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (2, 2, 20);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (3, 3, 20);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (4, 1, 21);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (5, 4, 21);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (6, 5, 21);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (7, 5, 22);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (8, 8, 22);
-insert into favoritos (id, propiedad_id, usuario_id) VALUES (9, 9, 22);
+
+insert into favoritos (propiedad_id, usuario_id) values (1, 20);
+insert into favoritos (propiedad_id, usuario_id) VALUES (2, 20);
+insert into favoritos (propiedad_id, usuario_id) VALUES (3, 20);
+insert into favoritos (propiedad_id, usuario_id) VALUES (1, 21);
+insert into favoritos (propiedad_id, usuario_id) VALUES (4, 21);
+insert into favoritos (propiedad_id, usuario_id) VALUES (5, 21);
+insert into favoritos (propiedad_id, usuario_id) VALUES (5, 22);
+insert into favoritos (propiedad_id, usuario_id) VALUES (8, 22);
+insert into favoritos (propiedad_id, usuario_id) VALUES (9, 22);
 
 
 

@@ -4,6 +4,7 @@ const path = require('path');
 
 const propiedadesFilePath = path.join(__dirname, '../data/propiedadesDataBase.json');
 const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
+const { Op } = require("sequelize");
 const adminController = {
     list: function (req, res) {
         db.propiedad.findAll()
@@ -11,6 +12,54 @@ const adminController = {
             res.render("listProperties", {propiedadListado: respuesta})
         })
     },
+    listFavoritos: async function (req, res) {
+        let usuarioLogueado= req.session.user.id;
+        var results = await db.favoritos.findAll({
+            attributes: ['propiedad_id'],
+            where: {
+                usuario_id:  usuarioLogueado
+            },
+            raw: true
+        });
+        let propiedadesBuscar=results.map(a=>a.propiedad_id);
+        
+        db.propiedad.findAll({
+            where: {
+                id: {
+                [Op.or]: [propiedadesBuscar]
+                }    
+            }
+        })
+        .then(function(respuesta){
+            res.render("listFavoritos", {resultados: respuesta})
+        });
+    },   
+    addFavorito: function(req, res){
+        let usuarioLogueado= req.session.user.id;
+        db.favoritos.create({
+            propiedad_id: req.params.idPropiedad,
+            usuario_id: usuarioLogueado
+        })
+        .then(function(respuesta){
+            res.redirect('/admin/listFavoritos');
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
+    deleteFavorito:  function(req, res){
+        let usuarioLogueado= req.session.user.id;
+        db.favoritos.destroy({
+            where: {
+                [Op.and]: [
+                    { propiedad_id: req.params.idPropiedad },
+                    { usuario_id: usuarioLogueado }
+                ]
+            }    
+        }).then(function(response){
+            res.redirect('/admin/listFavoritos')
+        });
+    },    
     formCreate:  function(req, res){
         res.render("formCreate");
     },

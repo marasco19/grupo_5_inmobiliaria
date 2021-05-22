@@ -1,159 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<%- include("./partials/heads/headDef.ejs") %>
-
-
-<body>
-    
-        
+    <%- include("./partials/heads/headDef") %>
+    <div id="container-main">
         <%- include("./partials/header") %> 
+    <main>
+        <section class="galeria">
+            <div class="swiper-container">
+                <i class="fa fa-arrows-alt"></i><span>Galería</span>
 
-        <main>
-            <section class="propiedad_detail">
-                <div class="tabs">
-                    <div class="tab">
-                        <input type="radio" name="tabgroup" id="tab-1" checked="">
-                        <label for="tab-1">
-                        <i class="fa fa-camera"></i>
-                        </label>
-                    </div>
-                    <div class="tab">
-                        <input type="radio" name="tabgroup" id="tab-2" disabled="">
-                        <label for="tab-2" class="tab-disabled">
-                        <i class="fa fa-video-camera"></i>
-                        </label>
-                    </div>
-                    <div class="tab">
-                        <input type="radio" name="tabgroup" id="tab-3" disabled="">
-                        <label for="tab-3" class="tab-disabled">
-                        <i class="fa fa-map"></i>
-                        </label>
-                    </div>
-                    <div class="tab">
-                        <input type="radio" name="tabgroup" id="tab-4">
-                        <label for="tab-4" class="">
-                        <i class="fa fa-map-marker"></i>
-                        </label>
-                    </div>
-                    <div class="tab">
-                        <input type="radio" name="tabgroup" id="tab-5">
-                        <label for="tab-5" class="last ">
-                        <i class="fa fa-play-circle-o"></i>
-                        </label>
-                    </div>
-                </div>
-            </section>
-            <section class="galeria">
-                <div class="swiper-container">
-                    <i class="fa fa-arrows-alt"></i><span>Galería</span>
-
-                    <img src="/images/propiedades/<%=propiedad.fotos%>">
-            
-                </div>
-            </section>
-            <section class="caracteristicas">
-                <div class="container">
-                    <div class="main-description">
-                            <div class="top">
-                                <div class="content-dir">
-                                    <br>
-                                    <span class="precio">USD <%= propiedad.precio %> </span>
-                                    <h1><%= propiedad.direccion %></h1>
-                                    <h2><%= propiedad.barrio %></h2>
-                                </div>
-
+                <img src="/images/propiedades/<%=propiedad.fotos%>">
+        
+            </div>
+        </section>
+        <section class="caracteristicas">
+            <div class="container">
+                <div class="main-description">
+                        <div class="top">
+                            <div class="content-dir">
+                                <br>
+                                <span class="precio">USD <%= propiedad.precio %> </span>
+                                <h1><%= propiedad.direccion %></h1>
+                                <h2><%= propiedad.barrio %></h2>
                             </div>
-                            <div class="content-description"> 
-                                <p><%= propiedad.descripciongral %></p>
-                            </div>
-                                <span class="superficie"><i class="icon-19"></i>Superficie total: <%= propiedad.suptotal %> m<sup>2</sup></span>
-                            <div class="group-list">
-                                <div>
-                                        <h2><strong> Aprox., Medidas Generales y Datos Técnicos</strong></h2>                       
-                                        <ul>
-                                            <li>Sup. Cubierta (m<sup>2</sup>): <strong><%= propiedad.supcubierta %></strong></li>
-                                            <li>Sup. Semicubierta (m<sup>2</sup>): <strong><%= propiedad.supdescubierta %></strong></li>
-                                        </ul>
-                                </div>
-                                <div>
-                                    <h2><strong>Descripción del Inmueble</strong></h2>
-                                    <ul>
-                                        <li>Ambientes: <strong><%= propiedad.ambientes %></strong></li>
-                                        <li>Cantidad de Baños: <strong><%= propiedad.banios %></strong></li>
-                                        <li>Tipo de Cocina: <strong><%= propiedad.tipococina %></strong></li>
 
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2><strong>Descripción Complementaria</strong></h2>
+                        </div>
+                        <div class="content-description"> 
+                            <p><%= propiedad.descripciongral %></p>
+                        </div>
+                            <span class="superficie"><i class="icon-19"></i>Superficie total: <%= propiedad.suptotal %> m<sup>2</sup></span>
+                        <div class="group-list">
+                            <div>
+                                    <h2><strong> Aprox., Medidas Generales y Datos Técnicos</strong></h2>                       
                                     <ul>
-                                        <li>Expensas: <strong>$ <%= propiedad.expensas %></strong></li>
-                                            <li>ABL: <strong>$<%= propiedad.abl %></strong></li>
+                                        <li>Sup. Cubierta (m<sup>2</sup>): <strong><%= propiedad.supcubierta %></strong></li>
+                                        <li>Sup. Semicubierta (m<sup>2</sup>): <strong><%= propiedad.supdescubierta %></strong></li>
                                     </ul>
-                                </div>
-                                <div>
-                                    <h2><strong>Características del Edificio</h3></strong></h2>                        
-                                    <ul>
-                                        <% if (propiedad.parrilla) { %>
-                                            <li>Parrilla</li>
-                                        <% } %>
-                                        <% if (propiedad.piscina) { %>
-                                            <li>Piscina</li>
-                                        <% } %>
-                                        <% if (propiedad.quincho) { %>
-                                            <li>Quincho</li>
-                                        <% } %>
-                                        <% if (propiedad.gimnasio) { %>
-                                            <li>Gimnasio</li>
-                                        <% } %>
-                                        <% if (propiedad.salonfiestas) { %>
-                                            <li>Salón de fiestas</li>
-                                        <% } %>
-                                        <% if (propiedad.seguridad) { %>
-                                            <li>Seguridad 24hs</li>
-                                        <% } %>
-                                        <% if (propiedad.grupoelec) { %>
-                                            <li>Grupo electrogeno</li>
-                                        <% } %>
-
-                                    </ul>
-                                </div>
-                                <form method="GET" action="/admin/formEdit/<%=propiedad.id %>">
-                                    <button class="boton-favorito">Agregar a favoritos</button>
-                                </form>
-                                 
                             </div>
+                            <div>
+                                <h2><strong>Descripción del Inmueble</strong></h2>
+                                <ul>
+                                    <li>Ambientes: <strong><%= propiedad.ambientes %></strong></li>
+                                    <li>Cantidad de Baños: <strong><%= propiedad.banios %></strong></li>
+                                    <li>Tipo de Cocina: <strong><%= propiedad.tipococina %></strong></li>
+
+                                </ul>
+                            </div>
+                            <div>
+                                <h2><strong>Descripción Complementaria</strong></h2>
+                                <ul>
+                                    <li>Expensas: <strong>$ <%= propiedad.expensas %></strong></li>
+                                        <li>ABL: <strong>$<%= propiedad.abl %></strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2><strong>Características del Edificio</h3></strong></h2>                        
+                                <ul>
+                                    <% if (propiedad.parrilla) { %>
+                                        <li>Parrilla</li>
+                                    <% } %>
+                                    <% if (propiedad.piscina) { %>
+                                        <li>Piscina</li>
+                                    <% } %>
+                                    <% if (propiedad.quincho) { %>
+                                        <li>Quincho</li>
+                                    <% } %>
+                                    <% if (propiedad.gimnasio) { %>
+                                        <li>Gimnasio</li>
+                                    <% } %>
+                                    <% if (propiedad.salonfiestas) { %>
+                                        <li>Salón de fiestas</li>
+                                    <% } %>
+                                    <% if (propiedad.seguridad) { %>
+                                        <li>Seguridad 24hs</li>
+                                    <% } %>
+                                    <% if (propiedad.grupoelec) { %>
+                                        <li>Grupo electrogeno</li>
+                                    <% } %>
+
+                                </ul>
+                            </div>
+                            <form method="GET" action="/admin/addFavorito/<%=propiedad.id %>">
+                                <button class="boton-favorito">Agregar a favoritos</button>
+                            </form>
+                                
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="formulario-contacto">
-                 <div class="wrapper">
-                       <div class="formulario">
-                         <h4>Sucursal Belgrano</h4>
-                            <div class="IsWhatsapp">
-                                <span class="tel"><a href="tel:'(011) 4666-6666''" style="color:#333333"><i class="fa fa-phone"></i>(011) 4666-6666</a></span>
-                                <a href="#" target="_blank"" style="color:black">
-                                  <span class="tel"><i class="fa fa-whatsapp"></i>1135715151</span>
-                              </a>                   
-                            </div>
-                            <strong>Consultar:</strong>
-                            <form class="contactar" action="/" method="POST" class="create-form">
-                                <input type="text" name="name" placeholder="Nombre y Apellido" id="frm_name">
-                                <input type="text" name="email" placeholder="E-mail" id="frm_email">
-                                <input type="number" name="telefono" placeholder="Teléfono" id="frm_telefono">
-                                <textarea name="comentario" id="frm_comentario" placeholder="Comentario"></textarea>
-                                <span class="boton-enviar">Enviar</span>
-                            </form>
-                       </div>
+            </div>
+        </section>
+        <section class="formulario-contacto">
+                <div class="wrapper">
+                    <div class="formulario">
+                        <h4>Sucursal Belgrano</h4>
+                        <div class="IsWhatsapp">
+                            <span class="tel"><a href="tel:'(011) 4666-6666''" style="color:#333333"><i class="fa fa-phone"></i>(011) 4666-6666</a></span>
+                            <a href="#" target="_blank"" style="color:black">
+                                <span class="tel"><i class="fa fa-whatsapp"></i>1135715151</span>
+                            </a>                   
+                        </div>
+                        <strong>Consultar:</strong>
+                        <form class="contactar" action="/" method="POST" class="create-form">
+                            <input type="text" name="name" placeholder="Nombre y Apellido" id="frm_name">
+                            <input type="text" name="email" placeholder="E-mail" id="frm_email">
+                            <input type="number" name="telefono" placeholder="Teléfono" id="frm_telefono">
+                            <textarea name="comentario" id="frm_comentario" placeholder="Comentario"></textarea>
+                            <span class="boton-enviar">Enviar</span>
+                        </form>
                     </div>
-            </section>
-        </main>    
-        
-        <%- include("./partials/footer") %> 
-
+                </div>
+        </section>
+    </main>    
+    <%- include("./partials/footer") %> 
     </div>   
 </body>
 </html>

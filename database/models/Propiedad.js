@@ -64,6 +64,7 @@ module.exports = (sequelize, DataTypes) => {
             as: "tipopropiedad",
             foreignKey: "tipopropiedad_id"
         });
+
     }        
     return propiedad;
 }   

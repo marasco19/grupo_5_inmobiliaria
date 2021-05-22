@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
     <%- include("./partials/heads/headDef") %>
-
-
 <body>
-
-    <!--HEADER-->
     <div id="container-main">
-
-        <%- include("./partials/header") %>
-
-<!--MAIN-->
+        <%- include("./partials/header") %> 
         <main>
             <section class="section-main">
                 <div class="izquierda">
@@ -31,7 +22,6 @@
                             <img src="images/telefono.png" alt="telefono" height="30px" width="30px">
                             <p>3679-2981</p>
                         </div>
-
                 </div>
                 <div class="derecha">
                     <form action="#" method="POST" class="formulario-tasacion">
@@ -47,37 +37,12 @@
                         <div class="espacios-formulario-comentario">
                             <input type="text"  name="comentario" placeholder="Comentario">
                         </div>
-                        <div class="boton-enviar">
-                            <button type="submit"> Enviar</button>
-                        </div>
-
-
+                            <span class="boton-enviar">Enviar</span>
                     </form>
                 </div>
-                
             </section>
-
-
-
-
-
-
-
-          
-
-
-
-
-
-
-
-
         </main>
-    
     <!--FOOTER-->
-  
     <%- include("./partials/footer") %> 
-    
-
 </body>
 </html>

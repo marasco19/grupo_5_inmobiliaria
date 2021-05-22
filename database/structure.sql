@@ -122,15 +122,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 -- Volcando estructura para tabla anchorena_database.favoritos
 CREATE TABLE IF NOT EXISTS `favoritos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `propiedad_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `foreignkey_propiedad_id` (`propiedad_id`),
   KEY `foreignkey_usuario_id` (`usuario_id`),
-  CONSTRAINT `foreign_usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `foreignkey_propiedad_id` FOREIGN KEY (`id`) REFERENCES `propiedad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `foreign_usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
+  CONSTRAINT `foreignkey_propiedad_id` FOREIGN KEY (`propiedad_id`) REFERENCES `propiedad` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.
 -- La exportación de datos fue deseleccionada.

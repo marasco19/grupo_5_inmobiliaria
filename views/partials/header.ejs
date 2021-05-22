@@ -1,4 +1,5 @@
 <header>
+ 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../../"><img src="../../images/logo2.png" class="logo-brand" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,41 +7,42 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto" >
-            <li class="nav-item active">
-              <a class="nav-link" href="/laempresa">La Empresa</a>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/laempresa">La Empresa </span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/tasaciones">Tasaciones</a>
             </li>
             <li class="nav-item dropdown">
-              <a href="" class="nav-item">Administración
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Administración
               </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="/admin/formCreate">Alta Propiedad</a></li>
-                <li><a class="dropdown-item" href="/admin/list">Editar propiedad</a></li>
-                <li><a class="dropdown-item" href="/users/list">Usuarios</a></li>
-              </ul>
-            </li>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/admin/formCreate">Alta Propiedad</a>
+                <a class="dropdown-item" href="/admin/list">Editar propiedad</a>
+                <a class="dropdown-item" href="/users/list">Usuarios</a>
+              </div>
             </li>
             <% if (!locals.isLogged) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
               </li>
-            <%}else{%>  
-            <li class="nav-item dropdown">
-                <a href="" class="nav-item">Hola <%= locals.userLogged.nombre %>
-                <img src="/images/users/<%= locals.userLogged.imagen %> "  style="border-radius: 100%; width: 40px"> </a>
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"></a>
-              </a>  
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="/users/profile">Perfil</a></li>
-                <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
-              </ul>
-            </li>
-            <% } %> 
+            <%}else{%> 
+              <li class="nav-item dropdown">
+                
+                  <a href="#" class="nav-item">Hola <%= locals.userLogged.nombre %>
+                    <img src="/images/users/<%= locals.userLogged.imagen %> "  style="border-radius: 100%; width: 40px"> </a>  
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/users/profile">Perfil</a>
+                  <a class="dropdown-item" href="/admin/listfavoritos">Mis favoritos</a>
+                  <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
+                  
+                </div>
+              </li>
+            <% } %>   
           </ul>
         </div>
-    </div>
+      </nav>
 </header>

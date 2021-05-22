@@ -33,8 +33,6 @@ router.get('/profile/', authMiddleware, usersController.profile);
 // Logout
 router.get('/logout/', usersController.logout);
 
-router.get('/list/', usersController.list);
-
 router.get('/formEdit/:id', usersController.edit);
 router.post('/formEdit/:id', uploadFile.single('imagen'), validations, usersController.update);
 
