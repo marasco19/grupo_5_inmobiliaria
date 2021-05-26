@@ -4,13 +4,12 @@ const router = express.Router();
 // Controller
 const usersController = require ("../controllers/usersController")
 
-
-
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
   
 // Formulario de registro
@@ -33,10 +32,15 @@ router.get('/profile/', authMiddleware, usersController.profile);
 // Logout
 router.get('/logout/', usersController.logout);
 
-router.get('/formEdit/:id', usersController.edit);
+// Editar usuario
+router.get('/formEdit/:id', authMiddleware, usersController.edit);
 router.post('/formEdit/:id', uploadFile.single('imagen'), validations, usersController.update);
 
-router.get('/delete/:id', usersController.delete);
+// Borrar usuario
+router.get('/delete/:id', authMiddleware, usersController.delete);
 router.post('/delete/:id', usersController.destroy);
+
+// Listar usuarios
+router.get('/list', authMiddleware, adminMiddleware, usersController.list);
 
 module.exports = router;

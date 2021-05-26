@@ -101,7 +101,7 @@ const usersController = {
                     oldData: req.body
                 });
             }else{
-                
+                // Usuario OK para loguear
                 delete userInDB.password;
                 // req.session.user = userInDB;
                 req.session.user = userInDB[0].dataValues;
@@ -138,7 +138,6 @@ const usersController = {
 
     },
     update: async function (req, res) {
-        // FALTA *** impactar la modificación en la BDD
         console.log(req.body);
         (req.body.tipo_usuario == "Agente")? req.body.tipo_usuario = 1: req.body.tipo_usuario = 2
         // imagen: req.file.filename

@@ -14,16 +14,23 @@
             <li class="nav-item">
               <a class="nav-link" href="/tasaciones">Tasaciones</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Administración
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/admin/formCreate">Alta Propiedad</a>
-                <a class="dropdown-item" href="/admin/list">Editar propiedad</a>
-                <a class="dropdown-item" href="/users/list">Usuarios</a>
-              </div>
-            </li>
+            
+              
+              <% if (locals.userLogged) { %>
+                <% if (locals.userLogged.tipo_usuario == 1) { %>  
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Administración
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/admin/formCreate">Alta Propiedad</a>
+                  <a class="dropdown-item" href="/admin/list">Editar propiedad</a>
+                  <a class="dropdown-item" href="/users/list">Usuarios</a>
+                </div>
+              </li>
+              <% } }%>
+              
+            
             <% if (!locals.isLogged) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
@@ -45,4 +52,6 @@
           </ul>
         </div>
       </nav>
+
+
 </header>

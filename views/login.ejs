@@ -18,15 +18,16 @@
                             <p class="login-title">Iniciar sesión</p>
                         </div>
                         
-                            <form class="contactar" action="/users/login" method="POST" class="create-form">
+                            <form class="contactar" action="/users/login" method="POST" class="create-form" id="login-form">
+                                <ul class="errores_login"></ul>
                                 <div class="control-formulario">
-                                    <input type="email" name="email" placeholder="Email *" value="<%=(locals.oldData)? oldData.email:"" %>">
+                                    <input id ="email" type="email" name="email" placeholder="Email *" value="<%=(locals.oldData)? oldData.email:"" %>">
                                     <% if (locals.errors && errors.email) { %>
                                      <p4 class="error_login"> <%= errors.email.msg %> </p4>
                                     <% } %>
                                 </div>    
                                 <div class="control-formulario">
-                                <input type="password" name="password" placeholder="password">
+                                <input id = "password" type="password" name="password" placeholder="password">
                                 <% if (locals.errors && errors.password) { %>
                                     <p4 class="error_login"> <%= errors.password.msg %> </p4>
                                    <% } %>
@@ -55,5 +56,6 @@
         <%- include("./partials/footer") %> 
         
     </div>   
+    <script src="/js/loginValidator.js"></script>
 </body>
 </html>
