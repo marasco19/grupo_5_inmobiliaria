@@ -79,9 +79,11 @@
 
                                 </ul>
                             </div>
+                            <% if (locals.userLogged) { %>                            
                             <form method="GET" action="/admin/addFavorito/<%=propiedad.id %>">
                                 <button class="boton-favorito">Agregar a favoritos</button>
                             </form>
+                            <% }%>
                                 
                         </div>
                     </div>
