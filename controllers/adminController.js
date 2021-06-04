@@ -150,10 +150,10 @@ const adminController = {
         })    
     },    
     formEdit:  async function(req, res){
-        const fotosPropiedad = await db.fotospropiedad.findAll({where: {propiedad_id: {[Op.eq]: req.params.idPropiedad}}});
+        /*const fotosPropiedad = await db.fotospropiedad.findAll({where: {propiedad_id: {[Op.eq]: req.params.idPropiedad}}});*/
         let respuesta = await db.propiedad.findByPk(req.params.idPropiedad);
         /*console.log(fotosPropiedad);*/
-        res.render("formEdit", {propiedad:respuesta, fotosPropiedad:fotosPropiedad});
+        res.render("formEdit", {propiedad:respuesta});
     },
     update:  function(req, res){
 	  
@@ -228,37 +228,28 @@ const adminController = {
             res.redirect('/admin/list')
         });
     },
-    detalleAdmin: function(req, res){
-        db.propiedad.findByPk(req.params.idPropiedad)
+    detalleAdmin:  function(req, res){
+         db.propiedad.findByPk(req.params.idPropiedad)
         .then(function(respuesta){
-            res.render("detalleAdmin", propiedad = respuesta);
-
+            let fotosProp = [respuesta.fotos1,respuesta.fotos2,respuesta.fotos3,respuesta.fotos4,respuesta.fotos5,respuesta.fotos6];
+            let fotosFiltradas = fotosProp.filter(function (el) {
+                return el != null;
+              });
+            res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas});
         })
-
     },
 
     storeContacto: async function(req, res){
-        db.contactos.create(
-
 
             await db.contactos.create({
-
                 nombre: req.body.nombre,
                 email: req.body.email,
                 telefono: req.body.telefono,
             })
-        )}
-        .then(function(respuesta){
-            res.render("detalleAdmin", propiedad = respuesta);
-
-        })
+            .then(function(respuesta){
+                res.render("detalleAdmin", propiedad = respuesta);
+            })
 
     }
-
-
-
-
-
-
-
+}
 module.exports = adminController;
