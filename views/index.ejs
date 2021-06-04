@@ -42,7 +42,7 @@
                     <div class="content-center">
                         <h1>Expertos en propiedades</h1>
                     </div>
-                    <form action="/buscar/propiedad" method="POST">
+                    <form action="/buscar/propiedad" method="POST" id="buscarForm">
                         <div class="form-search">
                             <div class="radio-group">
                                 <div onclick="clickado(1)">
@@ -86,8 +86,8 @@
                                     </div>
                                 </div>
                                 <div class="input-search desktop_767 ">
-                                    <input type="text" autocomplete="off" placeholder="Ingresá ubicación, barrio o palabra clave" name="quicksearch" class="quicksearch ui-autocomplete-input">
-                                    <button type="submit"><span class="btn orange search_propiedades"><ion-icon name="search-outline" class="icon-find"></ion-icon> Buscar </span></button>
+                                    <input type="text" autocomplete="off" placeholder="Ingresá ubicación, barrio o palabra clave" name="quicksearch" class="quicksearch ui-autocomplete-input" id="quicksearch"> 
+                                    <button type="submit"><span class="btn orange search_propiedades"><ion-icon name="search-outline" class="icon-find" id="search_outline"></ion-icon> Buscar </span></button>
                                 </div>
                             </div>
                         </div>
@@ -103,23 +103,23 @@
                             </div>
                             <div class="grid col2">
                                 <div>
-                                    <a href="#">Recoleta</a>
-                                    <a href="#">Palermo</a>
-                                    <a href="#">Puerto Madero</a>
-                                    <a href="#">Belgrano</a>
-                                    <a href="#">Caballito</a>
+                                    <a href="#" id="Recoleta">Recoleta</a>
+                                    <a href="#" id="Palermo">Palermo</a>
+                                    <a href="#" id="PuertoM">Puerto Madero</a>
+                                    <a href="#" id="Belgrano">Belgrano</a>
+                                    <a href="#" id="Caballito">Caballito</a>
                                 </div>
                                 <div>
-                                    <a href="#">Canning</a>
-                                    <a href="#">Pilar</a>
-                                    <a href="#">San Isidro</a>
-                                    <a href="#">Tigre</a>
-                                    <a href="#">Patagonia</a>
+                                    <a href="#" id="Canning">Canning</a>
+                                    <a href="#" id="Pilar">Pilar</a>
+                                    <a href="#" id="SanIsidro">San Isidro</a>
+                                    <a href="#" id="Tigre">Tigre</a>
+                                    <a href="#" id="Patagonia">Patagonia</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="mask">
                             <div class="top">
                                 <h3>Emprendimientos</h3>
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="item">
                         <div class="mask">
                             <div class="top">
@@ -208,5 +208,6 @@
         <%- include("./partials/footer") %> 
         
     </div>   
+    <script src="/js/buscar.js"></script>
 </body>
 </html>
