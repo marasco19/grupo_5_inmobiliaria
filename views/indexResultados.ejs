@@ -85,9 +85,9 @@
                                     <tbody>
                                         <% resultados.forEach(function(propiedad) { %>
                                             <tr>
-                                            <td><img src="/images/propiedades/<%=propiedad.fotos%>?h=350&auto=compress&cs=tinysrgb" alt="..." class="img-responsive"/></td>
+                                            <td><img src="/images/propiedades/<%=propiedad.fotos1%>?h=350&auto=compress&cs=tinysrgb" alt="..." class="img-responsive"/></td>
                                             <td style="width:10%;"><%=propiedad.titulo%></td>
-                                            <td> $ <%=propiedad.precio%> </td>
+                                            <td> <%=propiedad.moneda %>&nbsp;<%=propiedad.precio%> </td>
                                             <td> <%=propiedad.barrio%> </td>
                                             <td><span><i class="fa fa-arrows-alt"></i><%=propiedad.suptotal%></span></td>
                                             <td><span><i class="fa fa-bath"></i><%=propiedad.banios%> Baños</span></td>

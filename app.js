@@ -9,7 +9,8 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
-
+const apiPropiedadesRouter = require('./routes/api/propiedades')
+const apiUsuariosRouter = require('./routes/api/usuarios')
 
 const app = express();
 
@@ -43,6 +44,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/usuarios', apiUsuariosRouter);
+app.use('/api/propiedades', apiPropiedadesRouter);
 
 // Levantando el servidor para que escuche en el puerto 3000
 app.listen(3000, () => console.log("Servidor corriendo en puerto 3000") );

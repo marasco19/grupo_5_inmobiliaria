@@ -12,7 +12,10 @@
                     <!-- FORM -->
                     <div class="col-md-12">
                         <div class="card">
-                            <form method="POST" action="/admin/<%=propiedad.id%>?_method=PUT"  class="card-body" enctype="multipart/form-data">
+                            <form method="POST" action="/admin/<%=propiedad.id%>?_method=PUT"  id="product-form" class="card-body" enctype="multipart/form-data">
+                                <div id="errores">
+                                    <ul class="errores"></ul> 
+                                </div>
                                 <div class="card-header">
                                     <h5>Información General:</h5>
                                 </div>
@@ -58,7 +61,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Precio:</label>
-                                    <input type="number" name="precio" placeholder="" class="form-control" value="<%=propiedad.precio %>">
+                                    <input type="number" name="precio" placeholder="0" class="form-control" value="<%=propiedad.precio %>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moneda:</label>
+                                    <select type="select" name="moneda"  class="form-control">
+                                        <%
+                                        var options = ["$", "U$D"];
+                                        for ( var i = 0; i < options.length; i++ ){
+                                            var selected = ( propiedad.moneda == options[i] ) ? "selected" : "";
+                                        %>
+                                        <option value="$"  selected><%=options[i]%></option>
+                                        <% } %>
+                                    </select>    
                                 </div>
                                 <div class="form-group">
                                     <label>Dirección:</label>
@@ -82,26 +97,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
-                                    <input type="number" name="suptotal" placeholder="" class="form-control" value="<%= propiedad.suptotal %>">
+                                    <input type="number" name="suptotal" placeholder="0" class="form-control" value="<%= propiedad.suptotal %>">
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie cubierta:</label>
-                                    <input type="number" name="supcubierta"  class="form-control" value="<%= propiedad.supcubierta %>">
+                                    <input type="number" name="supcubierta" placeholder="0"  class="form-control" value="<%= propiedad.supcubierta %>">
                                 </div>
                                 <div class="form-group">    
                                     <label>Superficie descubierta:</label>
-                                    <input type="number" name="supdescubierta"  class="form-control" value="<%= propiedad.supdescubierta %>">
+                                    <input type="number" name="supdescubierta" placeholder="0"  class="form-control" value="<%= propiedad.supdescubierta %>">
                                 </div>
                                 <div class="card-header">
                                     <h5>Descripción del inmueble:</h5>
                                 </div>
                                     <div class="form-group">    
                                         <label for="ambientes">Ambientes:</label><br>
-                                        <input type="number" name="ambientes" class="form-control" value="<%= propiedad.ambientes %>">
+                                        <input type="number" name="ambientes" placeholder="0" class="form-control" value="<%= propiedad.ambientes %>">
                                         <label for="dormitorios">Cantidad de dormitorios:</label><br>
-                                        <input type="number" name="dormitorios" class="form-control" value="<%= propiedad.dormitorios %>" >
+                                        <input type="number" name="dormitorios" placeholder="0" class="form-control" value="<%= propiedad.dormitorios %>" >
                                         <label for="banios">Cantidad de baños:</label><br>
-                                        <input type="number" name="banios" class="form-control" value="<%= propiedad.banios %>">
+                                        <input type="number" name="banios" placeholder="0" class="form-control" value="<%= propiedad.banios %>">
                                         <label for="medcocina">Medida de la cocina:</label><br>
                                         <input type="text" name="medcocina" class="form-control" value="<%= propiedad.medcocina %>" >
                                         <label for="tipococina">Tipo de cocina:</label><br>
@@ -127,32 +142,32 @@
                                 </div>
                                 <div class="form-group">    
                                     <label for="expensas">Expensas:</label><br>     
-                                    <input type="number" name="expensas" class="form-control" value="<%= propiedad.expensas %>" >
+                                    <input type="number" name="expensas" placeholder="0" class="form-control" value="<%= propiedad.expensas %>" >
                                 </div> 
                                 <div class="form-group">    
                                     <label for="abl">ABL:</label><br>     
-                                    <input type="number" name="abl" class="form-control" value="<%= propiedad.abl %>" >
+                                    <input type="number" name="abl" placeholder="0" class="form-control" value="<%= propiedad.abl %>" >
                                 </div>
                                 <div class="form-group">    
                                     <label for="tipopiso">Tipo de piso:</label><br>     
-                                    <input type="text" name="tipopiso" class="form-control" value="<%= propiedad.tipopiso %>" >
+                                    <input type="text" name="tipopiso" placeholder="0" class="form-control" value="<%= propiedad.tipopiso %>" >
                                 </div> 
                                 <div class="form-group">    
                                     <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
-                                    <input type="number" name="nropisos" class="form-control" value="<%= (propiedad.nropisos==null)?0:propiedad.nropisos %> ">
+                                    <input type="number" name="nropisos" placeholder="0" class="form-control" value="<%= (propiedad.nropisos==null)?0:propiedad.nropisos %> ">
                                 </div>
                                 <div class="form-group">    
                                     <label for="dptosxpisos">Deptos. por Piso:</label><br>     
-                                    <input type="number" name="dptosxpisos" class="form-control" value="<%= propiedad.dptosxpisos %>" >
+                                    <input type="text" name="dptosxpisos" placeholder="0" class="form-control" value="<%=  (propiedad.dptosxpisos==null)?0:propiedad.dptosxpisos %>" >
                                 </div>
                                 <div class="form-group">    
                                     <label for="ascensor">Ascensor:</label><br>     
-                                    <input type="number" name="ascensor" class="form-control" value="<%= propiedad.ascensor %> ">
+                                    <input type="number" name="ascensor" placeholder="0" class="form-control" value="<%= (propiedad.ascensor==null)?0:propiedad.ascensor %> ">
                                 </div>
                                 <div class="card-header">
                                     <h5>Plano:</h5>
                                 </div>
-                                <input type="file" class="form-control-file" id="planos" name="planos">
+                                <input type="file" class="form-control-file" id="planos" name="planos" value="<%=propiedad.plano %>">
                                 <div class="card-header">
                                     <h5>Amenities:</h5>
                                 </div>
@@ -184,7 +199,14 @@
                                     <h5>Fotos Galeria</h5>
                                 </div>
                                 <div class="form-group">  
-                                    <input type="file" class="form-control-file" id="fotos" name="fotos">
+                                    <input type="file" class="form-control-file" id="fotos" name="fotos" multiple>
+                                    <div class="image-preview" id="imagePreview">
+                                       <% for ( var i = 0; i < fotosPropiedad.length; i++ ){  %>  
+                                        <img src="/images/propiedades/<%=fotosPropiedad[i].dataValues.nombre %>" width="200px" height="200px" alt="Image Preview" class="image-preview__image" id="image-preview__image">
+                                        
+                                        <% } %>
+                                        <span class="image-preview__default-text">Image Preview</span>
+                                    </div>
                                 </div>
                                 <div class="card-header">
                                     <h5>Videos</h5>
@@ -205,6 +227,6 @@
         </main>
         <%- include("./partials/footer") %> 
     </div>
-
+    <script src="/js/propiedadValidator.js"></script>
 </body>
 </html>

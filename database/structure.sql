@@ -85,7 +85,12 @@ CREATE TABLE IF NOT EXISTS `propiedad` (
   `youtube` varchar(255) DEFAULT NULL,
   `vimeo` varchar(255) DEFAULT NULL,
   `plano` varchar(255) DEFAULT NULL,
-  `fotos` varchar(255) DEFAULT NULL,
+  `fotos1` varchar(255) DEFAULT NULL,
+  `fotos2` varchar(255) DEFAULT NULL,
+  `fotos3` varchar(255) DEFAULT NULL,
+  `fotos4` varchar(255) DEFAULT NULL,
+  `fotos5` varchar(255) DEFAULT NULL,
+  `fotos6` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `foreignkey_tipopropiedad_id` (`tipopropiedad_id`),
   CONSTRAINT `foreignkey_tipopropiedad_id` FOREIGN KEY (`tipopropiedad_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -132,6 +137,15 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
   CONSTRAINT `foreignkey_propiedad_id` FOREIGN KEY (`propiedad_id`) REFERENCES `propiedad` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE IF NOT EXISTS `fotos_propiedad` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `propiedad_id` INT(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `foreignkey_fotospropiedad_id` (`propiedad_id`),
+  CONSTRAINT `foreignkey_fotospropiedad_id` FOREIGN KEY (`propiedad_id`) REFERENCES `propiedad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- La exportación de datos fue deseleccionada.
 -- La exportación de datos fue deseleccionada.
 

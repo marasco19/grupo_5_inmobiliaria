@@ -10,7 +10,7 @@ function authMiddleware (req, res, next){
     // Chequear si es administrador
         console.log(req.session.user.tipo_usuario);
 
-        if (req.session.user.tipo_usuario != 1){
+        if (req.session.user.tipo_usuario != "Agente"){
         // No es administrador
             return res.render("accesoDenegado");
         
