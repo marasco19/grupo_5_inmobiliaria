@@ -41,6 +41,6 @@ router.get('/delete/:id', authMiddleware, usersController.delete);
 router.post('/delete/:id', usersController.destroy);
 
 // Listar usuarios
-router.get('/list', authMiddleware, adminMiddleware, usersController.list);
+router.get('/list', adminMiddleware, usersController.list);
 
 module.exports = router;

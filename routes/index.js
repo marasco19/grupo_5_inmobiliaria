@@ -8,6 +8,7 @@ const mainController = require ("../controllers/mainController")
 const adminController = require ("../controllers/adminController")
 // Middleware para chequear si es administrador
 const adminMiddleware = require('../middlewares/adminMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 var multer  = require('multer');
 // SET STORAGE
@@ -46,7 +47,7 @@ router.get('/buscar/carrousel/:tipoPropiedad', mainController.buscarCarrousel);
 
 router.get('/admin/list', adminMiddleware, adminController.list);
 router.get('/admin/listfavoritos', adminController.listFavoritos);
-router.get('/admin/addFavorito/:idPropiedad', adminController.addFavorito);
+router.get('/admin/addFavorito/:idPropiedad', authMiddleware, adminController.addFavorito);
 router.get('/admin/deleteFavorito/:idPropiedad', adminController.deleteFavorito);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
 
@@ -56,6 +57,7 @@ router.get('/admin/formEdit/:idPropiedad', adminController.formEdit);
 router.get('/admin/formCreate', adminController.formCreate);
 router.put('/admin/:idPropiedad', cpUpload, adminController.update);
 router.delete('/admin/:idPropiedad', adminController.delete);
+router.post('/admin/contacto', cpUpload, adminController.storeContacto);
 
 
 

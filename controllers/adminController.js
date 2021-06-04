@@ -232,10 +232,33 @@ const adminController = {
         db.propiedad.findByPk(req.params.idPropiedad)
         .then(function(respuesta){
             res.render("detalleAdmin", propiedad = respuesta);
-            
+
+        })
+
+    },
+
+    storeContacto: async function(req, res){
+        db.contactos.create(
+
+
+            await db.contactos.create({
+
+                nombre: req.body.nombre,
+                email: req.body.email,
+                telefono: req.body.telefono,
+            })
+        )}
+        .then(function(respuesta){
+            res.render("detalleAdmin", propiedad = respuesta);
+
         })
 
     }
-}
+
+
+
+
+
+
 
 module.exports = adminController;

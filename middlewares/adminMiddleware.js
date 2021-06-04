@@ -8,7 +8,6 @@ function authMiddleware (req, res, next){
     
     }else{
     // Chequear si es administrador
-        console.log(req.session.user.tipo_usuario);
 
         if (req.session.user.tipo_usuario != "Agente"){
         // No es administrador

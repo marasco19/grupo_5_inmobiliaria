@@ -2,7 +2,7 @@ window.onload = function(){
     let formLogin = document.querySelector('#login-form');
     let listaErrores= document.querySelector(".errores_login");
     
-    listaErrores.innerHTML = "";
+    
 
     let errores = [];
 
@@ -26,6 +26,7 @@ window.onload = function(){
         if(errores.length > 0){
             e.preventDefault();
             
+            listaErrores.innerHTML = "";
             for(error of errores){
                 listaErrores.innerHTML += "<li>"+error+"</li>";
                 listaErrores.classList.add("alert-warning");
