@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         tipoopercion:DataTypes.STRING(45),
         tipopropiedad_id:DataTypes.INTEGER,
         precio:DataTypes.STRING(255),
+        moneda:DataTypes.STRING(255),
         direccion:DataTypes.STRING(255),
         barrio:DataTypes.STRING(255),
         latitud:DataTypes.DOUBLE,
@@ -51,7 +52,13 @@ module.exports = (sequelize, DataTypes) => {
         youtube: DataTypes.STRING(255),
         vimeo: DataTypes.STRING(255),
         plano: DataTypes.STRING(255),
-        fotos: DataTypes.STRING(255)
+        fotos1: DataTypes.STRING(255),
+        fotos2: DataTypes.STRING(255),
+        fotos3: DataTypes.STRING(255),
+        fotos4: DataTypes.STRING(255),
+        fotos5: DataTypes.STRING(255),
+        fotos6: DataTypes.STRING(255),
+        moneda: DataTypes.STRING(255)
 
     };
     let options = {
@@ -64,6 +71,10 @@ module.exports = (sequelize, DataTypes) => {
             as: "tipopropiedad",
             foreignKey: "tipopropiedad_id"
         });
+        /*propiedad.hasMany(models.fotospropiedad,{
+            as: "fotospropiedad",
+            foreingKey: "nombre"
+        });*/    
 
     }        
     return propiedad;

@@ -22,9 +22,10 @@ var storage = multer.diskStorage({
       )
     }
   })
-  
+
   var upload = multer({ storage: storage })
-  var cpUpload = upload.fields([{ name: 'planos', maxCount: 1 }, { name: 'fotos', maxCount: 8 }])
+  var cpUpload = upload.fields([{ name: 'planos', maxCount: 1 }, { name: 'foto1', maxCount: 1 }, { name: 'foto2', maxCount: 1 },
+   { name: 'foto3', maxCount: 1 }, { name: 'foto4', maxCount: 1 }, { name: 'foto5', maxCount: 1 }, { name: 'foto6', maxCount: 1 }]);
   
 router.get('/', mainController.index);
 
@@ -56,6 +57,7 @@ router.get('/admin/formEdit/:idPropiedad', adminController.formEdit);
 router.get('/admin/formCreate', adminController.formCreate);
 router.put('/admin/:idPropiedad', cpUpload, adminController.update);
 router.delete('/admin/:idPropiedad', adminController.delete);
+router.post('/admin/contacto', cpUpload, adminController.storeContacto);
 
 
 

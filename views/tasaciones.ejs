@@ -24,9 +24,12 @@
                         </div>
                 </div>
                 <div class="derecha">
-                    <form action="#" method="POST" class="formulario-tasacion">
+                    <form action="admin/contacto" method="POST" class="formulario-tasacion">
+                        <div class="errores">
+                            <ul class="errores_tasacion"></ul>
+                        </div>
                         <div class="espacios-formulario">
-                            <input type="text"  name="nombre y apellido" placeholder="Nombre y Apellido">
+                            <input type="text"  name="nombre" placeholder="Nombre y Apellido">
                         </div>
                         <div class="espacios-formulario">
                             <input type="email"  name="email" placeholder="Email">
@@ -37,12 +40,13 @@
                         <div class="espacios-formulario-comentario">
                             <input type="text"  name="comentario" placeholder="Comentario">
                         </div>
-                            <span class="boton-enviar">Enviar</span>
+                            <button type="submit" class="boton-enviar">Enviar</button>
                     </form>
                 </div>
             </section>
         </main>
     <!--FOOTER-->
     <%- include("./partials/footer") %> 
+    <script src="/js/tasacionValidator.js"></script>
 </body>
 </html>

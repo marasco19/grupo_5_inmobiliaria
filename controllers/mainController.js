@@ -32,10 +32,10 @@ const mainController = {
         res.render("tasaciones");
     },
     buscarPropiedad: function (req, res) {
-        
+        let propiedad_id = req.body.propiedad?req.body.propiedad:null;
         db.propiedad.findAll({
             where: {
-               tipopropiedad_id:  req.body.propiedad,
+               tipopropiedad_id:  propiedad_id,
                tipoopercion: req.body.comprar_alquilar,
                barrio: {[Op.like]: '%'+req.body.quicksearch+'%'} 
             },

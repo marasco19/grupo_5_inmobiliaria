@@ -5,6 +5,7 @@ const path = require('path');
 const propiedadesFilePath = path.join(__dirname, '../data/propiedadesDataBase.json');
 const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
 const { Op } = require("sequelize");
+
 const adminController = {
     list: function (req, res) {
         db.propiedad.findAll()
@@ -63,16 +64,29 @@ const adminController = {
     formCreate:  function(req, res){
         res.render("formCreate");
     },
-    store:  function(req, res){
-        let ids = propiedades.map(p=>p.id);
+    store:   function(req, res){
+        
 		
 		let planoImg;
 		let fotosImg;
 		
 		var filePlano = req.files[Object.keys(req.files)[0]];
-		var fileFotos = req.files[Object.keys(req.files)[1]];
+		var fileFotos1 = req.files[Object.keys(req.files)[1]];
+		var fileFotos2 = req.files[Object.keys(req.files)[2]];
+		var fileFotos3 = req.files[Object.keys(req.files)[3]];
+		var fileFotos4 = req.files[Object.keys(req.files)[4]];
+		var fileFotos5 = req.files[Object.keys(req.files)[5]];
+		var fileFotos6 = req.files[Object.keys(req.files)[6]];
+        
+
         planoImg=filePlano[0].filename;
-        fotosImg=fileFotos[0].filename;
+        fotos1Img=fileFotos1[0].filename;
+        fotos2Img=fileFotos2[0].filename;
+        fotos3Img=fileFotos3[0].filename;
+        fotos4Img=fileFotos4[0].filename;
+        fotos5Img=fileFotos5[0].filename;
+        fotos6Img=fileFotos6[0].filename;
+
 
         db.propiedad.create({
             titulo:  req.body.titulo, 
@@ -80,6 +94,7 @@ const adminController = {
             tipoopercion:  req.body.tipooperacion,
             tipopropiedad_id:  req.body.tipopropiedad,
             precio:  req.body.precio,
+            moneda: req.body.moneda,
             direccion:  req.body.direccion,
             barrio:  req.body.barrio,
             latitud:  req.body.latitud,
@@ -120,18 +135,25 @@ const adminController = {
             youtube:  req.body.youtube,
             vimeo:  req.body.vimeo,
             plano:  planoImg,
-            fotos:  fotosImg
+            fotos1:  fotos1Img,
+            fotos2:  fotos2Img,
+            fotos3:  fotos3Img,
+            fotos4:  fotos4Img,
+            fotos5:  fotos5Img,
+            fotos6:  fotos6Img,
         })
         .then(function(response){
             res.redirect('/admin/list')
-        });
-    },    
-    formEdit: function(req, res){
-        db.propiedad.findByPk(req.params.idPropiedad)
-        .then(function(respuesta){
-            res.render("formEdit", propiedad = respuesta);
-            
         })
+        .catch((err) => {
+            console.log(err);
+        })    
+    },    
+    formEdit:  async function(req, res){
+        /*const fotosPropiedad = await db.fotospropiedad.findAll({where: {propiedad_id: {[Op.eq]: req.params.idPropiedad}}});*/
+        let respuesta = await db.propiedad.findByPk(req.params.idPropiedad);
+        /*console.log(fotosPropiedad);*/
+        res.render("formEdit", {propiedad:respuesta});
     },
     update:  function(req, res){
 	  
@@ -206,14 +228,28 @@ const adminController = {
             res.redirect('/admin/list')
         });
     },
-    detalleAdmin: function(req, res){
-        db.propiedad.findByPk(req.params.idPropiedad)
+    detalleAdmin:  function(req, res){
+         db.propiedad.findByPk(req.params.idPropiedad)
         .then(function(respuesta){
-            res.render("detalleAdmin", propiedad = respuesta);
-            
+            let fotosProp = [respuesta.fotos1,respuesta.fotos2,respuesta.fotos3,respuesta.fotos4,respuesta.fotos5,respuesta.fotos6];
+            let fotosFiltradas = fotosProp.filter(function (el) {
+                return el != null;
+              });
+            res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas});
         })
+    },
+
+    storeContacto: async function(req, res){
+
+            await db.contactos.create({
+                nombre: req.body.nombre,
+                email: req.body.email,
+                telefono: req.body.telefono,
+            })
+            .then(function(respuesta){
+                res.render("laempresa");
+            })
 
     }
 }
-
 module.exports = adminController;

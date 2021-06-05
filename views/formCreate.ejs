@@ -13,7 +13,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <form action="/admin" method="POST" enctype="multipart/form-data" id="product-form" class="card-body" >
-                                <ul class="errores"></ul>
+                                <div id="errores">
+                                <ul class="errores"></ul> 
+                                </div>
                                 <div class="card-header">
                                     <h5>Información General:</h5>
                                 </div>
@@ -24,8 +26,8 @@
                                 <div class="form-group">
                                     <label>Estado</label>
                                     <select type="select" id="estado"  class="form-control" name="estado">
-                                        <option value="activo">Activo</option>
-                                        <option value="inactivo" selected>Inactivo</option>
+                                        <option value="activo" selected>Activo</option>
+                                        <option value="inactivo" >Inactivo</option>
                                     </select>    
                                 </div>
                                 <div class="form-group">
@@ -47,7 +49,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Precio:</label>
-                                    <input type="number" name="precio" placeholder="" class="form-control">
+                                    <input type="number" name="precio" placeholder="0" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moneda:</label>
+                                    <select type="select" name="moneda"  class="form-control">
+                                        <option value="$"  selected>$</option>
+                                        <option value="U$D">U$D</option>
+                                    </select>    
                                 </div>
                                 <div class="form-group">
                                     <label>Dirección:</label>
@@ -71,26 +80,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie total:</label>
-                                    <input type="number" name="suptotal" placeholder="" class="form-control">
+                                    <input type="number" name="suptotal" placeholder="0" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Superficie cubierta:</label>
-                                    <input type="number" name="supcubierta"  class="form-control">
+                                    <input type="number" name="supcubierta" placeholder="0"  class="form-control">
                                 </div>
                                 <div class="form-group">    
                                     <label>Superficie descubierta:</label>
-                                    <input type="number" name="supdescubierta"  class="form-control">
+                                    <input type="number" name="supdescubierta" placeholder="0"  class="form-control">
                                 </div>
                                 <div class="card-header">
                                     <h5>Descripción del inmueble:</h5>
                                 </div>
                                     <div class="form-group">    
                                         <label for="ambientes">Ambientes:</label><br>
-                                        <input type="number" name="ambientes" class="form-control">
+                                        <input type="number" name="ambientes" placeholder="0" class="form-control">
                                         <label for="dormitorios">Cantidad de dormitorios:</label><br>
-                                        <input type="number" name="dormitorios" class="form-control">
+                                        <input type="number" name="dormitorios" placeholder="0" class="form-control">
                                         <label for="banios">Cantidad de baños:</label><br>
-                                        <input type="number" name="banios" class="form-control">
+                                        <input type="number" name="banios" placeholder="0" class="form-control">
                                         <label for="medcocina">Medida de la cocina:</label><br>
                                         <input type="text" name="medcocina" class="form-control">
                                         <label for="tipococina">Tipo de cocina:</label><br>
@@ -117,27 +126,27 @@
                                 </div>
                                 <div class="form-group">    
                                     <label for="expensas">Expensas:</label><br>     
-                                    <input type="number" name="expensas" class="form-control">
+                                    <input type="number" name="expensas" placeholder="0" class="form-control">
                                 </div> 
                                 <div class="form-group">    
                                     <label for="abl">ABL:</label><br>     
-                                    <input type="number" name="abl" class="form-control">
+                                    <input type="number" name="abl" placeholder="0"  class="form-control">
                                 </div>
                                 <div class="form-group">    
                                     <label for="tipopiso">Tipo de piso:</label><br>     
-                                    <input type="number" name="tipopiso" class="form-control">
+                                    <input type="text" name="tipopiso" placeholder="" class="form-control">
                                 </div> 
                                 <div class="form-group">    
                                     <label for="nropisos">Nº de Pisos del Edificio:</label><br>     
-                                    <input type="number" name="nropisos" class="form-control">
+                                    <input type="number" name="nropisos" placeholder="0" class="form-control">
                                 </div>
                                 <div class="form-group">    
                                     <label for="dptosxpisos">Deptos. por Piso:</label><br>     
-                                    <input type="number" name="ptosxpisos" class="form-control">
+                                    <input type="number" name="ptosxpisos" placeholder="0" class="form-control">
                                 </div>
                                 <div class="form-group">    
                                     <label for="ascensor">Ascensor:</label><br>     
-                                    <input type="number" name="ascensor" class="form-control">
+                                    <input type="number" name="ascensor" placeholder="0" class="form-control">
                                 </div>
                                 <div class="card-header">
                                     <h5>Plano:</h5>
@@ -173,9 +182,13 @@
                                 <div class="card-header">
                                     <h5>Fotos Galeria</h5>
                                 </div>
-                                <div class="form-group">  
-                                    <input type="file" multiple class="form-control-file" name="fotos">
-                                </div> 
+                                <input type="file" class="form-control-file" id="foto1" name="foto1">
+                                <input type="file" class="form-control-file" id="foto2" name="foto2">
+                                <input type="file" class="form-control-file" id="foto3" name="foto3">
+                                <input type="file" class="form-control-file" id="foto4" name="foto4">
+                                <input type="file" class="form-control-file" id="foto5" name="foto5">
+                                <input type="file" class="form-control-file" id="foto6" name="foto6">
+                                 
                                 <div class="card-header">
                                     <h5>Videos</h5>
                                 </div>   
