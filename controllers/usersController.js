@@ -23,7 +23,7 @@ const usersController = {
     processRegister: async function (req, res){
         
         const resultValidation = validationResult(req);
-        console.log(req.body);
+        // console.log(req.body);
         if(resultValidation.errors.length > 0){
             return res.render('userRegisterForm',{
                 errors: resultValidation.mapped(),
@@ -37,8 +37,16 @@ const usersController = {
             imagen: req.file.filename
         }
         
-        let userInDB = User.findByField('email', req.body.email);
-        if (userInDB){
+        // let userInDB = User.findByField('email', req.body.email);
+        console.log(req.body.email)
+        let userInDB;
+       await db.usuario.findAll({
+            where:{ email:  req.body.email}
+           }).then(resultado=>{
+               userInDB = resultado;})
+               console.log(userInDB)
+
+        if (userInDB.length > 0){
             return res.render('userRegisterForm',{
                 errors: {
                     email: {
