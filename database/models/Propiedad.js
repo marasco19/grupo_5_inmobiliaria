@@ -57,7 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         fotos3: DataTypes.STRING(255),
         fotos4: DataTypes.STRING(255),
         fotos5: DataTypes.STRING(255),
-        fotos6: DataTypes.STRING(255)
+        fotos6: DataTypes.STRING(255),
+        moneda: DataTypes.STRING(255)
 
     };
     let options = {
@@ -70,10 +71,6 @@ module.exports = (sequelize, DataTypes) => {
             as: "tipopropiedad",
             foreignKey: "tipopropiedad_id"
         });
-        /*propiedad.hasMany(models.fotospropiedad,{
-            as: "fotospropiedad",
-            foreingKey: "nombre"
-        });*/    
 
     }        
     return propiedad;
