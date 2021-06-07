@@ -247,7 +247,7 @@ const adminController = {
                 telefono: req.body.telefono,
             })
             .then(function(respuesta){
-                res.render("detalleAdmin", propiedad = respuesta);
+                res.render("laempresa");
             })
 
     }
