@@ -29,7 +29,7 @@ const mainController = {
         res.render("laempresa");
     },
     tasaciones: function (req, res) {
-        res.render("tasaciones");
+        res.render("tasaciones", {mensaje:""});
     },
     buscarPropiedad: function (req, res) {
     let propiedad_id = req.body.propiedad?req.body.propiedad:null;

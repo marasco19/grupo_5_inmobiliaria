@@ -68,7 +68,12 @@ const adminController = {
         
 		
 		let planoImg;
-		let fotosImg;
+		let fotos1Img;
+		let fotos2Img;
+		let fotos3Img;
+		let fotos4Img;
+		let fotos5Img;
+		let fotos6Img;
 		
 		var filePlano = req.files[Object.keys(req.files)[0]];
 		var fileFotos1 = req.files[Object.keys(req.files)[1]];
@@ -140,7 +145,7 @@ const adminController = {
             fotos3:  fotos3Img,
             fotos4:  fotos4Img,
             fotos5:  fotos5Img,
-            fotos6:  fotos6Img,
+            fotos6:  fotos6Img
         })
         .then(function(response){
             res.redirect('/admin/list')
@@ -150,23 +155,43 @@ const adminController = {
         })    
     },    
     formEdit:  async function(req, res){
-        /*const fotosPropiedad = await db.fotospropiedad.findAll({where: {propiedad_id: {[Op.eq]: req.params.idPropiedad}}});*/
         let respuesta = await db.propiedad.findByPk(req.params.idPropiedad);
-        /*console.log(fotosPropiedad);*/
         res.render("formEdit", {propiedad:respuesta});
     },
     update:  function(req, res){
 	  
         let planoImg;
-		let fotosImg;
+		let fotos1Img;
+		let fotos2Img;
+		let fotos3Img;
+		let fotos4Img;
+		let fotos5Img;
+		let fotos6Img;
+		
 		if(req.files && req.files.length){
 		    var filePlano = req.files[Object.keys(req.files)[0]];
-		    var fileFotos = req.files[Object.keys(req.files)[1]];
+            var fileFotos1 = req.files[Object.keys(req.files)[1]];
+            var fileFotos2 = req.files[Object.keys(req.files)[2]];
+            var fileFotos3 = req.files[Object.keys(req.files)[3]];
+            var fileFotos4 = req.files[Object.keys(req.files)[4]];
+            var fileFotos5 = req.files[Object.keys(req.files)[5]];
+            var fileFotos6 = req.files[Object.keys(req.files)[6]];
+            
             planoImg=filePlano[0].filename;
-            fotosImg=fileFotos[0].filename;
+            fotos1Img=fileFotos1[0].filename;
+            fotos2Img=fileFotos2[0].filename;
+            fotos3Img=fileFotos3[0].filename;
+            fotos4Img=fileFotos4[0].filename;
+            fotos5Img=fileFotos5[0].filename;
+            fotos6Img=fileFotos6[0].filename;
         }else{
             planoImg='';
-            fotosImg='';
+            fotos1Img='';
+            fotos2Img='';
+            fotos3Img='';
+            fotos4Img='';
+            fotos5Img='';
+            fotos6Img='';
         }    
 
         db.propiedad.update({
@@ -215,7 +240,12 @@ const adminController = {
             youtube:  req.body.youtube,
             vimeo:  req.body.vimeo,
             plano:  planoImg,
-            fotos:  fotosImg
+            fotos1:  fotos1Img,
+            fotos2:  fotos2Img,
+            fotos3:  fotos3Img,
+            fotos4:  fotos4Img,
+            fotos5:  fotos5Img,
+            fotos6:  fotos6Img
         },
         {where: {id: req.params.idPropiedad}
     }).then(function(response){
@@ -229,25 +259,44 @@ const adminController = {
         });
     },
     detalleAdmin:  function(req, res){
+        console.log(res);
          db.propiedad.findByPk(req.params.idPropiedad)
         .then(function(respuesta){
             let fotosProp = [respuesta.fotos1,respuesta.fotos2,respuesta.fotos3,respuesta.fotos4,respuesta.fotos5,respuesta.fotos6];
             let fotosFiltradas = fotosProp.filter(function (el) {
                 return el != null;
               });
-            res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas});
+            console.log(fotosFiltradas);  
+            res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas, mensaje:""});
         })
     },
+    detalleAdminCon:  async function(req, res){
+         await db.contactos.create({
+            nombre: req.body.nombre,
+            email: req.body.email,
+            telefono: req.body.telefono,
+            comentario: req.body.comentario
+        });
+         await db.propiedad.findByPk(req.params.idPropiedad)
+        .then(function(respuesta){
+            let fotosProp = [respuesta.fotos1,respuesta.fotos2,respuesta.fotos3,respuesta.fotos4,respuesta.fotos5,respuesta.fotos6];
+            let fotosFiltradas = fotosProp.filter(function (el) {
+                return el != null;
+              });
+            res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas, mensaje:"Nos contactaremos a la brevedad"});
+        })
+    },
+    
+    storeContacto:  function(req, res){
 
-    storeContacto: async function(req, res){
-
-            await db.contactos.create({
+            db.contactos.create({
                 nombre: req.body.nombre,
                 email: req.body.email,
                 telefono: req.body.telefono,
+                comentario: req.body.comentario
             })
             .then(function(respuesta){
-                res.render("laempresa");
+                res.render("tasaciones", {mensaje: "Nos contactaremos a la brevedad"});
             })
 
     }

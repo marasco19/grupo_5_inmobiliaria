@@ -8,11 +8,24 @@
             <div class="container">
                 <div id="carouselExampleControls" class="carousel slide w-70" data-ride="carousel">
                     <div class="carousel-inner">
-                        <% fotosProp.forEach(function(fotos) { %>  
-                      <div class="carousel-item active">
-                        <img class="d-block w-100" src="/images/propiedades/<%=fotos%>" alt="First slide">
-                      </div>
-                      <% }) %>
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos1%>" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos2%>" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos3%>" alt="Third slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos4%>" alt="Third slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos5%>" alt="Third slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/images/propiedades/<%=propiedad.fotos6%>" alt="Third slide">
+                          </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -22,7 +35,8 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>
-                  </div>
+                </div>
+                
                 <div class="main-description">
                         <div class="top">
                             <div class="content-dir">
@@ -109,18 +123,36 @@
                             </a>                   
                         </div>
                         <strong>Consultar:</strong>
-                        <form class="contactar" action="/" method="POST" class="create-form">
-                            <input type="text" name="name" placeholder="Nombre y Apellido" id="frm_name">
-                            <input type="text" name="email" placeholder="E-mail" id="frm_email">
-                            <input type="number" name="telefono" placeholder="Teléfono" id="frm_telefono">
-                            <textarea name="comentario" id="frm_comentario" placeholder="Comentario"></textarea>
-                            <span class="boton-enviar">Enviar</span>
+                        <form class="contactar" action="/admin/<%=propiedad.id%>/detalleAdmin" method="POST" class="formulario-tasacion" id="formulario-tasacion">
+                            <input id="mensajeOk" name="mensajeOk" type="hidden" value="Nos contactaremos a la brevedad">
+                            <div class="errores">
+                                <ul class="errores_tasacion"></ul>
+                            </div>
+                            <% if(mensaje.length > 0) { %>
+                                <div class="is-valid">
+                                    <ul class="errores_tasacion"><%=mensaje%></ul>
+                                </div>
+                            <% } %>
+                            <div class="espacios-formulario">
+                                <input type="text"  name="nombre" placeholder="Nombre y Apellido">
+                            </div>
+                            <div class="espacios-formulario">
+                                <input type="email"  name="email" placeholder="Email">
+                            </div>
+                            <div class="espacios-formulario">
+                                <input type="tel"  name="telefono" placeholder="Telefono">
+                            </div>
+                            <div class="espacios-formulario-comentario">
+                                <input type="text"  name="comentario" placeholder="Comentario">
+                            </div>
+                            <button type="submit" class="boton-enviar">Enviar</button>
                         </form>
                     </div>
                 </div>
         </section>
     </main>    
     <%- include("./partials/footer") %> 
+    <script src="/js/tasacionValidator.js"></script>
     </div>   
 </body>
 </html>

@@ -15,19 +15,24 @@
                         <p class="contacto-titulo">¿Tienes mas preguntas?</p>
                         <p class= "contactos">Ponte en contacto con nuestra sede central por los siguientes medios.</p>
                         <div class="instagram">
-                            <img src="images/instagram.png" alt="instagram" height="30px" width="30px">
+                            <img src="/images/instagram.png" alt="instagram" height="30px" width="30px">
                             <p>@Anchorena_Propiedades</p>
                         </div>
                         <div class="telefono">
-                            <img src="images/telefono.png" alt="telefono" height="30px" width="30px">
+                            <img src="/images/telefono.png" alt="telefono" height="30px" width="30px">
                             <p>3679-2981</p>
                         </div>
                 </div>
                 <div class="derecha">
-                    <form action="admin/contacto" method="POST" class="formulario-tasacion">
+                    <form action="admin/contacto" method="POST" class="formulario-tasacion" id="formulario-tasacion">
                         <div class="errores">
                             <ul class="errores_tasacion"></ul>
                         </div>
+                        <% if(mensaje.length > 0) { %>
+                            <div class="is-valid">
+                                <ul class="errores_tasacion"><%=mensaje%></ul>
+                            </div>
+                        <% } %>
                         <div class="espacios-formulario">
                             <input type="text"  name="nombre" placeholder="Nombre y Apellido">
                         </div>

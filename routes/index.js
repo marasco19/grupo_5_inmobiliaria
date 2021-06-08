@@ -50,6 +50,7 @@ router.get('/admin/listfavoritos', adminController.listFavoritos);
 router.get('/admin/addFavorito/:idPropiedad', authMiddleware, adminController.addFavorito);
 router.get('/admin/deleteFavorito/:idPropiedad', adminController.deleteFavorito);
 router.get('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdmin);
+router.post('/admin/:idPropiedad/detalleAdmin', adminController.detalleAdminCon);
 
 router.get('/admin/formCreate', adminMiddleware, adminController.formCreate);
 router.post('/admin', cpUpload, adminController.store);

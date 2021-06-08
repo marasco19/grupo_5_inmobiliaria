@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: DataTypes.STRING(45),
         telefono: DataTypes.STRING(45),
-        nombre: DataTypes.STRING(255)
+        nombre: DataTypes.STRING(255),
+        comentario: DataTypes.STRING(512)
     };
     let options = {
         tableName: 'contactos',
