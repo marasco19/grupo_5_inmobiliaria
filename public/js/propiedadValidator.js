@@ -1,11 +1,12 @@
 window.onload = function(){
-    let formularioNew = document.querySelector('#product-form');
+    let formularioNew = document.getElementById('product-form');
     const inpFile = document.getElementById('fotos');
     
 
     let error = [];
 
     formularioNew.addEventListener("submit", function(e){
+        
         
         if(formularioNew.titulo.value == ""){
             error.push("Debe ingresar un titulo Para la propiedad <br> ");
@@ -37,16 +38,13 @@ window.onload = function(){
         }else{
             formularioNew.barrio.classList.add("is-valid");
         }
-        if(formularioNew.fotos.value == ""){
-            error.push("Debe ingresar fotos para la propiedad <br>");
+        if(formularioNew.fotos1.value == ""){
+            error.push("Debe ingresar al menos una foto para la propiedad <br>");
             formularioNew.fotos.classList.add("is-invalid");
         }else{
             formularioNew.fotos.classList.add("is-valid");
         }
 
-
-
-        
 
         if(error.length > 0){
             e.preventDefault();

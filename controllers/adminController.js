@@ -75,22 +75,42 @@ const adminController = {
 		let fotos5Img;
 		let fotos6Img;
 		
-		var filePlano = req.files[Object.keys(req.files)[0]];
-		var fileFotos1 = req.files[Object.keys(req.files)[1]];
-		var fileFotos2 = req.files[Object.keys(req.files)[2]];
-		var fileFotos3 = req.files[Object.keys(req.files)[3]];
-		var fileFotos4 = req.files[Object.keys(req.files)[4]];
-		var fileFotos5 = req.files[Object.keys(req.files)[5]];
-		var fileFotos6 = req.files[Object.keys(req.files)[6]];
-        
+        if(req.files[Object.keys(req.files)[0]]){
+		    var filePlano = req.files[Object.keys(req.files)[0]];
+            planoImg=filePlano[0].filename;
+        }    
+        if(req.files[Object.keys(req.files)[1]]){
+		    var fileFotos1 = req.files[Object.keys(req.files)[1]];
+            fotos1Img=fileFotos1[0].filename;
+        }
+        if(req.files[Object.keys(req.files)[2]]){
+            var fileFotos2 = req.files[Object.keys(req.files)[2]];
+            fotos2Img=fileFotos2[0].filename;
+        }    
+        if(req.files[Object.keys(req.files)[3]]){
+            var fileFotos3 = req.files[Object.keys(req.files)[3]];
+            fotos3Img=fileFotos3[0].filename;
+        }
+        if(req.files[Object.keys(req.files)[4]]){
+            var fileFotos4 = req.files[Object.keys(req.files)[4]];
+            fotos4Img=fileFotos4[0].filename;
+        }
+        if(req.files[Object.keys(req.files)[5]]){
+            var fileFotos5 = req.files[Object.keys(req.files)[5]];
+            fotos5Img=fileFotos5[0].filename;
+        }    
+        if(req.files[Object.keys(req.files)[6]]){
+            var fileFotos6 = req.files[Object.keys(req.files)[6]];
+            fotos6Img=fileFotos6[0].filename;
+        }
 
-        planoImg=filePlano[0].filename;
-        fotos1Img=fileFotos1[0].filename;
-        fotos2Img=fileFotos2[0].filename;
-        fotos3Img=fileFotos3[0].filename;
-        fotos4Img=fileFotos4[0].filename;
-        fotos5Img=fileFotos5[0].filename;
-        fotos6Img=fileFotos6[0].filename;
+        
+       
+        
+        
+        
+        
+        
 
 
         db.propiedad.create({
@@ -259,14 +279,14 @@ const adminController = {
         });
     },
     detalleAdmin:  function(req, res){
-        console.log(res);
+        
          db.propiedad.findByPk(req.params.idPropiedad)
         .then(function(respuesta){
             let fotosProp = [respuesta.fotos1,respuesta.fotos2,respuesta.fotos3,respuesta.fotos4,respuesta.fotos5,respuesta.fotos6];
             let fotosFiltradas = fotosProp.filter(function (el) {
                 return el != null;
               });
-            console.log(fotosFiltradas);  
+             
             res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas, mensaje:""});
         })
     },
@@ -286,7 +306,6 @@ const adminController = {
             res.render("detalleAdmin", {propiedad: respuesta, fotosProp: fotosFiltradas, mensaje:"Nos contactaremos a la brevedad"});
         })
     },
-    
     storeContacto:  function(req, res){
 
             db.contactos.create({

@@ -38,13 +38,13 @@ const usersController = {
         }
         
         // let userInDB = User.findByField('email', req.body.email);
-        console.log(req.body.email)
+       
         let userInDB;
        await db.usuario.findAll({
             where:{ email:  req.body.email}
            }).then(resultado=>{
                userInDB = resultado;})
-               console.log(userInDB)
+               
 
         if (userInDB.length > 0){
             return res.render('userRegisterForm',{
@@ -58,7 +58,7 @@ const usersController = {
         }
         
         // Guarda el usaurio en la base de datos
-        console.log(userToCreate);
+     
         (userToCreate.tipo_usuario == "Agente")? userToCreate.tipo_usuario = 1: userToCreate.tipo_usuario = 2
         
         await db.usuario.create({
@@ -127,7 +127,7 @@ const usersController = {
 
     },
     profile: (req, res) => {
-        console.log(req.cookies.userEmail);
+        
         return res.render("userProfile", {user:req.session.user})
     },
     logout: (req, res) => {
@@ -146,7 +146,7 @@ const usersController = {
 
     },
     update: async function (req, res) {
-        console.log(req.body);
+       
         (req.body.tipo_usuario == "Agente")? req.body.tipo_usuario = 1: req.body.tipo_usuario = 2
         // imagen: req.file.filename
 
