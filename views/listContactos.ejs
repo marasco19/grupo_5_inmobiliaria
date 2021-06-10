@@ -1,0 +1,44 @@
+<%- include("./partials/heads/headDef.ejs") %>
+    <div id="container-main">
+        <%- include("./partials/header") %> 
+        <main>
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">e-mail</th>
+                            <th scope="col">Comentario</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <% contactos.forEach(function(contacto) { %>   
+                                
+                            <tr>
+                              <td class="text-right">
+                                <form action="/admin/contacto/delete/<%=contacto.id %>" method="GET">
+                                    <button class="btn btn-danger badge-pill">X</button>
+                                </form>    
+                            </td>
+
+                                <td><%=contacto.nombre%></td>
+                                <td><%=contacto.telefono%></td>
+                                <td><%=contacto.email%></td>
+                                <td><%=contacto.comentario%></td>
+                            </tr>
+                          <% }) %>
+                        </tbody>
+                      </table>
+                </div>
+                
+            </div>          
+        </main>
+        <%- include("./partials/footer") %> 
+    </div>
+
+</body>
+</html>
