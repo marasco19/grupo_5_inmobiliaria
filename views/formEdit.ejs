@@ -12,7 +12,7 @@
                     <!-- FORM -->
                     <div class="col-md-12">
                         <div class="card">
-                            <form method="POST" action="/admin/<%=propiedad.id%>?_method=PUT"  id="product-form" class="card-body" enctype="multipart/form-data">
+                            <form method="POST" action="/admin/<%=propiedad.id%>?_method=PUT"  id="product-form" class="card-body">
                                 <div id="errores">
                                     <ul class="errores"></ul> 
                                 </div>
@@ -198,16 +198,12 @@
                                 <div class="card-header">
                                     <h5>Fotos Galeria</h5>
                                 </div>
-                                <div class="form-group">  
-                                    <input type="file" class="form-control-file" id="fotos" name="fotos" multiple>
-                                    <div class="image-preview" id="imagePreview">
-                                       <% for ( var i = 0; i < fotosPropiedad.length; i++ ){  %>  
-                                        <img src="/images/propiedades/<%=fotosPropiedad[i].dataValues.nombre %>" width="200px" height="200px" alt="Image Preview" class="image-preview__image" id="image-preview__image">
-                                        
-                                        <% } %>
-                                        <span class="image-preview__default-text">Image Preview</span>
-                                    </div>
-                                </div>
+                                <input type="file" class="form-control-file" id="fotos1" name="fotos1" value="<%=propiedad.fotos1 %>">
+                                <input type="file" class="form-control-file" id="fotos2" name="fotos2" value="<%=propiedad.fotos2 %>">
+                                <input type="file" class="form-control-file" id="fotos3" name="fotos3" value="<%=propiedad.fotos3 %>">
+                                <input type="file" class="form-control-file" id="fotos4" name="fotos4" value="<%=propiedad.fotos4 %>">
+                                <input type="file" class="form-control-file" id="fotos5" name="fotos5" value="<%=propiedad.fotos5 %>">
+                                <input type="file" class="form-control-file" id="fotos6" name="fotos6" value="<%=propiedad.fotos6 %>">
                                 <div class="card-header">
                                     <h5>Videos</h5>
                                 </div>   
@@ -227,6 +223,6 @@
         </main>
         <%- include("./partials/footer") %> 
     </div>
-    <script src="/js/propiedadValidator.js"></script>
+    <script src="/js/propiedadEditValidator.js"></script>
 </body>
 </html>

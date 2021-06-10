@@ -66,7 +66,6 @@ const adminController = {
     },
     store:   function(req, res){
         
-		
 		let planoImg;
 		let fotos1Img;
 		let fotos2Img;

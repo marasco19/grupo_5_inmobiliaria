@@ -34,15 +34,6 @@ window.onload = function(){
             formularioNew.barrio.classList.add("is-valid");
         }
     
-        
-        if(formularioNew.fotos1.value == ""){
-            error.push("Debe ingresar al menos una foto para la propiedad <br>");
-            formularioNew.fotos1.classList.add("is-invalid");
-        }else{
-            formularioNew.fotos1.classList.add("is-valid");
-        }
-        
-        
         if(error.length > 0){
             e.preventDefault();
             let listaErrores= document.querySelector(".errores");

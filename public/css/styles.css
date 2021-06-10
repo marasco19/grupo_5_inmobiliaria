@@ -1486,3 +1486,6 @@ section .propiedad_detail {
 .form-buttons {
   display: inline-block;
 }
+.form-control-file {
+  padding: 5px;
+}
