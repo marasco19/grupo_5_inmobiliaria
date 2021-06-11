@@ -16,7 +16,7 @@ const propiedadesAPIController = {
             let respuesta = {
                 meta: {
                     status : 200,
-                    total: movies.length,
+                    total: propiedades.length,
                     url: 'api/propiedades'
                 },
                 data: propiedades
@@ -38,8 +38,26 @@ const propiedadesAPIController = {
                 }
                 res.json(respuesta);
             });
+    },
+    'destacada': async (req, res) => {
+        await db.propiedad.findAll({
+            attributes: [
+                sequelize.fn('MAX', sequelize.col('precio')),
+                'id', 'moneda','direccion','descripciongral', 'precio', 'fotos1'
+             ],
+             raw: true
+            })
+            .then(propiedad => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        url: '/api/propiedad/destacada'
+                    },
+                    data: propiedad
+                }
+                res.json(respuesta);
+            });
     }
-
 }
 
 module.exports = propiedadesAPIController;

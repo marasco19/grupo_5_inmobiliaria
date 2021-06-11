@@ -48,7 +48,7 @@ app.use('/api/usuarios', apiUsuariosRouter);
 app.use('/api/propiedades', apiPropiedadesRouter);
 
 // Levantando el servidor para que escuche en el puerto 3000
-app.listen(3000, () => console.log("Servidor corriendo en puerto 3000") );
+app.listen(3002, () => console.log("Servidor corriendo en puerto 3000") );
 
 // enviando una pagina HTML con la ruta de Root. (http://localhost:3000)
 

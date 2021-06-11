@@ -24,8 +24,8 @@ var storage = multer.diskStorage({
   })
 
   var upload = multer({ storage: storage })
-  var cpUpload = upload.fields([{ name: 'planos', maxCount: 1 }, { name: 'foto1', maxCount: 1 }, { name: 'foto2', maxCount: 1 },
-   { name: 'foto3', maxCount: 1 }, { name: 'foto4', maxCount: 1 }, { name: 'foto5', maxCount: 1 }, { name: 'foto6', maxCount: 1 }]);
+  var cpUpload = upload.fields([{ name: 'planos', maxCount: 1 }, { name: 'fotos1', maxCount: 1 }, { name: 'fotos2', maxCount: 1 },
+   { name: 'fotos3', maxCount: 1 }, { name: 'fotos4', maxCount: 1 }, { name: 'fotos5', maxCount: 1 }, { name: 'fotos6', maxCount: 1 }]);
   
 router.get('/', mainController.index);
 
