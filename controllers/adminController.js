@@ -313,6 +313,23 @@ const adminController = {
                 res.render("tasaciones", {mensaje: "Nos contactaremos a la brevedad"});
             })
 
+    },
+
+
+    listContactos: function(req, res){
+        db.contactos.findAll()
+        .then(function(respuesta){
+            res.render("listContactos", {contactos: respuesta})
+        })
+
+    },
+
+    contactoDelete: async function (req, res) {
+        let contacto = await db.contactos.findByPk(req.params.id);
+        await contacto.destroy();
+        res.redirect("/admin/listContactos");
     }
+
+
 }
 module.exports = adminController;

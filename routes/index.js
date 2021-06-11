@@ -59,6 +59,8 @@ router.get('/admin/formCreate', adminController.formCreate);
 router.put('/admin/:idPropiedad', cpUpload, adminController.update);
 router.delete('/admin/:idPropiedad', adminController.delete);
 router.post('/admin/contacto', cpUpload, adminController.storeContacto);
+router.get('/admin/listContactos', adminMiddleware, adminController.listContactos);
+router.get('/admin/contacto/delete/:id', adminMiddleware, adminController.contactoDelete);
 
 
 
